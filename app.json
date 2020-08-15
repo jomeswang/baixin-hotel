@@ -4,7 +4,8 @@
     "pages/discount/index",
     "pages/mine/index",
     "pages/logs/logs",
-    "pages/hotel/index"
+    "pages/hotel/hotelDetail/index",
+    "pages/hotel/bookHotel/index"
 
 
   ],
