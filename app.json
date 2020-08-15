@@ -1,17 +1,17 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/discount/index",
     "pages/mine/index",
     "pages/logs/logs",
     "pages/hotel/index"
 
-    
+
   ],
-  "window":{
+  "window": {
     "backgroundTextStyle": "light",
-    "backgroundColor": "#f66e26",
-    "navigationBarBackgroundColor": "#f66e26",
+    "backgroundColor": "#FF4500",
+    "navigationBarBackgroundColor": "#FF4500",
     "navigationBarTitleText": "百姓渔家",
     "navigationBarTextStyle": "white"
   },
@@ -19,8 +19,7 @@
     "color": "#333333",
     "selectedColor": "#f66e26",
     "backgroundColor": "#ffffff",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index",
         "text": "订房",
         "iconPath": "res/iconfont/room.png",
@@ -29,12 +28,12 @@
       {
         "pagePath": "pages/discount/index",
         "text": "优惠券"
-      
 
-      },{
+
+      }, {
         "pagePath": "pages/mine/index",
         "text": "我的"
-        
+
       }
 
     ]

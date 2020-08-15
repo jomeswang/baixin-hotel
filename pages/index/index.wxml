@@ -1,6 +1,95 @@
-
+<import src='../../components/HotelCard/HotelCard.wxml' />
+<SearchInput></SearchInput>
+<!-- 轮播图 -->
 <swiper class='homeHeader' indicator-dots autoplay interval='3000' circular skip-hidden-item-layout>
-     <swiper-item class='swiper' wx:for="{{homeAdvertises}}">
-          <image src='{{item.imgSrc}}' mode='scaleToFill' class='swiper' bindtap='homeAdvertisesTap' data-index='{{index}}'></image>
-     </swiper-item>
+  <swiper-item class='swiper' wx:for="{{homeAdvertises}}">
+    <image src='{{item.imgSrc}}' mode='scaleToFill' class='swiper' bindtap='homeAdvertisesTap' data-index='{{index}}'></image>
+  </swiper-item>
 </swiper>
+<!-- 文字白板区块 -->
+<view class='filterContent'>
+  <view class='filterView'>
+    <view class="location">
+      <view class="filter">
+        <text class="text">百姓渔村</text>
+      </view>
+    </view>
+    <!-- 一行 -->
+    <view class="location">
+      <view class="filter">
+        <text class="text">桂庙新村××号，距深大地铁站0.5公里</text>
+      </view>
+    </view>
+    <!-- 一行 -->
+    <view class="location">
+      <view class="filter">
+        <text class="text">舒适</text>
+      </view>
+      <view class="filter">
+        <text class="text">独栋</text>
+      </view>
+      <view class="filter">
+        <text class="text">停车场</text>
+      </view>
+      <view class="filter">
+        <text class="text">近深大</text>
+      </view>
+      <view class="filter">
+        <text class="text">市区</text>
+      </view>
+    </view>
+    <!-- 一行 -->
+    <view class="location">
+      <view class="filter">
+        <text class="text">一键导航</text>
+      </view>
+      <view style='color:#ccc;text-align: center;'>|</view>
+      <view class="filter">
+        <text class="text">联系电话</text>
+      </view>
+    </view>
+    <!-- 一行 -->
+    <view class="location">
+      <view class="filter">
+        <text class="text">👍9.2k</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 占位 让其恢复文档流 -->
+<view class="nothing"></view>
+<!-- 时间 -->
+<view class="schedule">
+  <text class="divideText">入住</text>
+  <text class="divideText">退房</text>
+</view>
+<!-- 日期计算 -->
+<view class='dateContent'>
+  <view class='dateItem'>
+    <picker class='date' mode="date" value="{{startDate}}" start="{{currentDate}}" end="{{endOfStartDate}}" bindchange="startDateChange">
+      <view class='date'>
+        <text class='day'>{{startDay}}</text>
+        <view class='monthWeek'>
+          <text class='month'>{{startMonth}}月</text>
+          <text class='week'>{{startWeek}}</text>
+        </view>
+      </view>
+    </picker>
+    <view class='horizontalLine' style='width:60rpx;position:absolute;right:0;'>—</view>
+  </view>
+  <text class='dayCount'>{{dayCount}}天</text>
+  <view class='dateItem'>
+    <view class='horizontalLine' style='width:60rpx;position:absolute;'>—</view>
+    <picker class='date' mode="date" value="{{endDate}}" start="{{startDate}}" end="{{endOfEndDate}}" bindchange="endDateChange">
+      <view class='date'>
+        <text class='day'>{{endDay}}</text>
+        <view class='monthWeek'>
+          <text class='month'>{{endMonth}}月</text>
+          <text class='week'>{{endWeek}}</text>
+        </view>
+      </view>
+    </picker>
+  </view>
+</view>
+<!-- 日期end -->
+<template is='roomListItem' wx:for='{{roomArray}}' data="{{imageUrl:item.image,roomName:item.name,services:item.service,price:item.price,index:index,bookTap:'bookRoom'}}" />

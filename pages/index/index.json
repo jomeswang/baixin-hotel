@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "SearchInput": "../../components/SearchInput/SearchInput",
+    "HotelCard":"../../components/HotelCard/HotelCard"
+  }
 }
