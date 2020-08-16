@@ -10,7 +10,7 @@
         <text class='priceTip'>起</text>
       </view>
     </view>
-    <view class='bookBtn' hover-class='bookBtnHover' bindtap="handleItem" data-index='{{index}}'>
+    <view class='bookBtn' hover-class='bookBtnHover' catchtap="handleItem" data-index='{{index}}'>
       预订
     </view>
   </view>
