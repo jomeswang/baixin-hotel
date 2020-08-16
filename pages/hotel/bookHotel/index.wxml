@@ -26,6 +26,9 @@
       <text class='caption'>备注</text>
       <input class='remark' placeholder='请补充你的其他需求'></input>
     </view>
+    <!-- 身份证 -->
+
+    <!--  -->
     <view style='width:100%;height:100rpx;'></view>
   </view>
 </scroll-view>
@@ -35,5 +38,5 @@
     <text>¥{{roomPrice}}</text>
     <text wx:if='{{isDiscount}}' class='payMsg'>(已优惠{{discount}}元)</text>
   </view>
-  <view class='payBtn'>立即支付</view>
+  <view class='payBtn' bindtap="payhandle">立即支付</view>
 </view>

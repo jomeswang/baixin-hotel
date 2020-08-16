@@ -26,7 +26,7 @@ Page({
    */
   onLoad: function (options) {
     // 放入接口请求的   后面我看看
-    
+
     console.log(options);
     roomPrice = options.price;
     hotelName = options.hotelName;
@@ -42,6 +42,12 @@ Page({
       endDate: endDate,
     });
   },
+  payhandle(e){
+    wx.navigateTo({
+      url: '../hotelDetail/index',
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

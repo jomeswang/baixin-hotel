@@ -71,6 +71,20 @@
 					"pathName": "pages/hotel/bookHotel/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/hotel/hotelDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "优惠券",
+					"pathName": "pages/discount/index",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

@@ -1,2 +1,55 @@
-<!--pages/hotel/index.wxml-->
-<text>pages/hotel/index.wxml</text>
+<!-- 文字白板区块 -->
+<view class='filterContent'>
+  <view class='filterView'>
+    <view class="location">
+      <view class="filter">
+        <text class="text">成功预订-待入住</text>
+      </view>
+    </view>
+    <!-- 一行 -->
+    <view class="location">
+      <view class="filter">
+        <text class="text">一键导航</text>
+      </view>
+      <view style='color:#ccc;text-align: center;'>|</view>
+      <view class="filter">
+        <text class="text">联系电话</text>
+      </view>
+    </view>
+    <!-- 一行 -->
+    <view class="location">
+      <view class="filter">
+        <text class="text">入住后7张优惠券生效</text>
+      </view>
+    </view>
+  </view>
+</view>
+<image class="top-image" src="../../../res/images/text-adver.png"></image>
+<view class="nothing"></view>
+<!-- 中间的内容 -->
+   <view class='MediumContent'>
+        <view>深圳市百姓渔村</view>
+        <view style='margin-top:10rpx;'>房型：标准单人间</view>
+         <view style='margin-top:10rpx;'>房型：标准单人间</view>
+          <view style='margin-top:10rpx;'>房型：标准单人间</view>
+           <view style='margin-top:10rpx;'>房型：标准单人间</view>
+           <!-- 文末右边 -->
+           <view class="content-right">
+           <view id="right-text" style=" border:#666 5rpx solid ;">取消订单 </view>
+           <view id="right-text" > 再次预订</view>
+            
+            </view>
+  </view>
+  <!-- 底部的内容 文字详细 -->
+     <view class='MediumContent'>
+     <view id="footContent-headline">
+        <view style="font-size:36rpx">❗订房必读</view>
+        <view style="color:red">查看全部</view>
+     </view>   
+        <view style='margin-top:10rpx;'>房型：标准单人间</view>
+         <view style='margin-top:10rpx;'>房型：标准单人间</view>
+          <view style='margin-top:10rpx;'>房型：标准单人间</view>
+           <view style='margin-top:10rpx;'>房型：标准单人间</view>
+           <!-- 文末右边 -->
+
+  </view>

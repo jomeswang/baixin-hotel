@@ -1,6 +1,6 @@
 .search_input {
   height: 60rpx;
-  padding: 10rpx;
+  padding: 15rpx;
   background-color: #FF4500;
 }
 .search_input navigator {
@@ -9,6 +9,6 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  border-radius: 15rpx;
+  border-radius: 5rpx;
   color: #666;
 }
