@@ -7,7 +7,7 @@ Page {
   }
 .nothing{
  
-  height: 15%;
+  height: 18%;
 }
 .filterContent {
   width: 100%;
@@ -17,6 +17,14 @@ Page {
   padding: 0 28rpx;
 
 }
+.filterContent .lovePng{
+  width: 115rpx;
+  height: 115rpx;
+ left:50%;
+ transform:translate(-50%);
+  position: absolute;
+  margin-top: -52rpx;
+}
 .filterView {
   display: flex;
   flex-direction: column;
@@ -24,7 +32,7 @@ Page {
   height: max-content;
   width: 100%;
   box-shadow: 0rpx 8rpx 20rpx #bbb;
-  border-radius: 14rpx;
+  border-radius: 20px;
   background: white;
 }
 .location {
@@ -35,7 +43,8 @@ Page {
      display: flex;
      flex-direction: row;
      align-items: center;
-     border-bottom: 1rpx solid #eee;
+     
+     border-bottom: 1rpx solid white;
 }
 
 .location .caption, .location .city, .location .filter .text {

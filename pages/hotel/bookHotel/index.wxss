@@ -60,7 +60,33 @@ Page {
   color: #ee6715;
   padding-left: 24rpx;
 }
-
+/* 订房必读 */
+.MediumContent {
+  margin: 24rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 36rpx;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 6rpx 20rpx #ccc;
+  background: white;
+  font-size: 30rpx;
+}
+.content-right{
+  display: flex;
+  flex-direction: row-reverse;
+}
+#right-text{
+  border: tomato 5rpx solid ;
+  padding: 5px;
+  border-radius: 30rpx;
+  margin-right: 15rpx;
+  margin-left: 25rpx;
+}
+#footContent-headline{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .payItem .payBtn {
   display: flex;
   align-items: center;
@@ -81,6 +107,8 @@ Page {
   border-bottom: #dedede solid 1px;
   padding: 26rpx;
   align-items: center;
+  border: 5;
+  
 }
 
 .settingItem .caption, .settingItem .value {

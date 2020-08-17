@@ -6,6 +6,19 @@
       <view>{{hotelName}}</view>
       <view style='margin-top:10rpx;'>房型：{{roomName}}</view>
     </view>
+      <!-- 订房必读 -->
+     <view class='MediumContent'>
+     <view id="footContent-headline">
+        <view style="font-size:36rpx">❗订房必读</view>
+        <view style="color:red">查看全部</view>
+     </view>   
+        <view style='margin-top:10rpx;'>房型：标准单人间</view>
+         <view style='margin-top:10rpx;'>房型：标准单人间</view>
+          <view style='margin-top:10rpx;'>房型：标准单人间</view>
+           <view style='margin-top:10rpx;'>房型：标准单人间</view>
+           <!-- 文末右边 -->
+
+  </view>
     <template is='settingItem' data="{{caption:'入住/离店',value:startDate+'/'+endDate,needIcon:false,isInput:false}}" />
     <template is='settingItem' data="{{caption:'房间数量 ',value:'1间 ',needIcon:true,isInput:false}}" />
     <view style='width:100%;height:24rpx;'></view>

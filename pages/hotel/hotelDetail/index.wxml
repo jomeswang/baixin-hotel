@@ -1,6 +1,14 @@
 <!-- 文字白板区块 -->
 <view class='filterContent'>
+<image class="lovePng" src="../../../res/iconfont/wating.png"></image>
   <view class='filterView'>
+      <!-- 一行 -->
+      <view class="location">
+      <view class="filter">
+        <text class="text"></text>
+      </view>
+    </view>
+        <!-- 一行 -->
     <view class="location">
       <view class="filter">
         <text class="text">成功预订-待入住</text>

@@ -8,10 +8,19 @@
 </swiper>
 <!-- 文字白板区块 -->
 <view class='filterContent'>
+  <image class="lovePng" src="../../res/iconfont/love.png"></image>
   <view class='filterView'>
+
+      <!-- 一行 -->
+     <view class="location">
+      <view class="filter">
+        <text class="text"></text>
+      </view>
+    </view>
+        <!-- 一行 -->
     <view class="location">
       <view class="filter">
-        <text class="text">百姓渔村</text>
+        <text class="text" style="font-size:44rpx">百姓渔村</text>
       </view>
     </view>
     <!-- 一行 -->
@@ -60,8 +69,8 @@
 <view class="nothing"></view>
 <!-- 时间 -->
 <view class="schedule">
-  <text class="divideText">入住</text>
-  <text class="divideText">退房</text>
+  <text class="divideText">入住时间</text>
+  <text class="divideText">退房时间</text>
 </view>
 <!-- 日期计算 -->
 <view class='dateContent'>
