@@ -15,6 +15,7 @@
     "navigationBarBackgroundColor": "#FF4500",
     "navigationBarTitleText": "百姓渔家",
     "navigationBarTextStyle": "white"
+   
   },
   "tabBar": {
     "color": "#333333",

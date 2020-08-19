@@ -82,6 +82,7 @@ Page {
   margin-right: 15rpx;
   margin-left: 25rpx;
 }
+
 #footContent-headline{
   display: flex;
   flex-direction: row;

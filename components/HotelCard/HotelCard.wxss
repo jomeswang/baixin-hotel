@@ -1,5 +1,5 @@
 .roomListItem {
-  width: 100%;
+  width: 50%;
   height: 172rpx;
   padding: 16rpx;
   display: flex;

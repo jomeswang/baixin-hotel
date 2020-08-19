@@ -20,41 +20,43 @@
         <!-- 一行 -->
     <view class="location">
       <view class="filter">
-        <text class="text" style="font-size:44rpx">百姓渔村</text>
+        <text class="text" style="font-size:44rpx">百 姓 渔 村 酒 店 </text>
       </view>
     </view>
     <!-- 一行 -->
     <view class="location">
       <view class="filter">
-        <text class="text">桂庙新村××号，距深大地铁站0.5公里</text>
+        <text id="Text"  >桂庙新村16号，距深大地铁站0.5公里</text>
+      </view>
+    </view>
+    <!-- 一行 -->
+    <view class="location">
+      <view class="filter0">
+        <text class="text1">舒适</text>
+      </view>
+      <view class="filter0">
+        <text class="text1">独栋</text>
+      </view>
+      <view class="filter0">
+        <text class="text1">停车场</text>
+      </view>
+      <view class="filter0">
+        <text class="text1">近深大</text>
+      </view>
+      <view class="filter0">
+        <text class="text1">市区</text>
       </view>
     </view>
     <!-- 一行 -->
     <view class="location">
       <view class="filter">
-        <text class="text">舒适</text>
-      </view>
-      <view class="filter">
-        <text class="text">独栋</text>
-      </view>
-      <view class="filter">
-        <text class="text">停车场</text>
-      </view>
-      <view class="filter">
-        <text class="text">近深大</text>
-      </view>
-      <view class="filter">
-        <text class="text">市区</text>
-      </view>
-    </view>
-    <!-- 一行 -->
-    <view class="location">
-      <view class="filter">
-        <text class="text">一键导航</text>
+      <image src="../../res/iconfont/导航.png" style="width:18px;height:18px"></image>
+        <text class="text2">一键导航</text>
       </view>
       <view style='color:#ccc;text-align: center;'>|</view>
       <view class="filter">
-        <text class="text">联系电话</text>
+      <image src="../../res/iconfont/电话.jpg" style="width:25px;height:25px"></image>
+        <text class="text2">联系电话</text>
       </view>
     </view>
     <!-- 一行 -->
