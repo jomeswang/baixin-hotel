@@ -27,6 +27,9 @@ var endOfEndDate = '2020-12-31';
 
 var dayCount = 1;
 
+// 点赞
+
+
 Page({
   data: {
     homeAdvertises: [{
@@ -57,12 +60,19 @@ Page({
     // hotel
     hotelName: '',
     hotelAddress: '',
+    // 点赞
+    likes:1,
+   
     roomArray: [
          {
               image: '../../res/images/ic_hotel_image.png',
               name: '标准单人间',
               service: 'WiFi/有窗/空调',
-              price: 158
+              eating:"早饭",
+              time:"当天18:00前可免费取消",
+              price: 158,
+      
+              
          }, {
               image: '../../res/images/ic_hotel_image.png',
               name: '标准双人间',
@@ -78,7 +88,7 @@ Page({
               name: '豪华双人间',
               service: 'WiFi/有窗/空调',
               price: 358
-         }
+         },
     ],
   },
   //事件处理函数
@@ -87,18 +97,40 @@ Page({
   },
   onLoad: function () {
 
-
+   
     startDate = currentDate;
     startYear = currentYear;
     startDay = currentDay;
     startMonth = currentMonth;
     startWeek = currentWeek;
 
+   
     this.initEndDate();
 
     this.setSearchDate();
 
   },
+  likesItem:function(e){
+    console.log(this.data.likes)
+    if (this.data.likes===1) {
+      this.setData({
+        likes:0
+      })
+    }
+      else  
+      this.setData({
+        likes:1
+      })
+    
+  //   if (likes===1) {
+  //     likes=0
+  // }
+  // else
+  //   likes=1
+  },
+
+
+
   // 时间选择
   startDateChange: function (e) {
     console.log(e);
@@ -153,7 +185,7 @@ Page({
     var start = new Date(startFormat);
     var end = new Date(endFormat);
 
-    console.log(start + "->" + end);
+    // console.log(start + "->" + end);
     var result = end - start;
     if (result >= 0) {
       var days = parseInt(result / (1000 * 60 * 60 * 24));
@@ -162,6 +194,7 @@ Page({
       return 0;
     }
   },
+  
 
   formatDate: function (date) {
     return date.replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '').replace(/(-)/g, '/');
@@ -213,8 +246,9 @@ Page({
   },
   // 订房的跳转
   handleItem(e){
+   
    wx.navigateTo({
-     url: '../../pages/hotel/bookHotel/index',
+     url: '../../pages/hotel/bookHotel/index?startDate='+this.data.startDate+"&endDate="+this.data.endDate,
    })
   },
     //点击我显示底部弹出框
@@ -222,6 +256,7 @@ hotelItemTap:function(e){
   console.log(e);
   this.showModal();
 },
+
 
 //显示对话框
  showModal: function () {
@@ -252,6 +287,10 @@ hotelItemTap:function(e){
      timingFunction: "linear",
      delay: 0
    })
+  //  点赞
+
+    
+  
    this.animation = animation
    animation.translateY(300).step()
    this.setData({

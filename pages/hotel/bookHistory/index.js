@@ -1,55 +1,43 @@
-// pages/bookHotel/bookHotel.js
-// 接口有数据后来这里绑定
-var roomPrice;
-var hotelName;
-var roomName;
-var startDate;
-var endDate;
-
+// pages/hotel/bookHistory/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isDiscount: false,
-    roomPrice,
-    hotelName,
-    roomName,
-    startDate,
-    endDate,
-    discount: '598'
+    roomArray: [
+      {
+           image: '../../../res/images/ic_hotel_image.png',
+           name: '标准单人间',
+           service: 'WiFi/有窗/空调',
+           price: 158,
+           num:0
+           
+      }, {
+           image: '../../../res/images/ic_hotel_image.png',
+           name: '标准双人间',
+           service: 'WiFi/有窗/空调',
+           price: 258
+      }, {
+           image: '../../../res/images/ic_hotel_image.png',
+           name: '豪华单人间',
+           service: 'WiFi/有窗/空调',
+           price: 198
+      }, {
+           image: '../../../res/images/ic_hotel_image.png',
+           name: '豪华双人间',
+           service: 'WiFi/有窗/空调',
+           price: 358
+      },
+ ],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 放入接口请求的   后面我看看
 
-    roomPrice = options.price;
-    hotelName = options.hotelName;
-    roomName = options.roomName;
-    startDate = options.startDate;
-    endDate = options.endDate;
-
-    this.setData({
-      roomPrice: roomPrice,
-      hotelName: hotelName,
-      roomName: roomName,
-      startDate: startDate,
-      endDate: endDate,
-  
-
-    });
   },
- handleItem(e){
-    wx.navigateTo({
-      url: '../hotelDetail/index',
-      
-    })
-  },
-
 
   /**
    * 生命周期函数--监听页面初次渲染完成

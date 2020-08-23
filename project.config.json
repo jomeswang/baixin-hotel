@@ -81,8 +81,8 @@
 				},
 				{
 					"id": -1,
-					"name": "优惠券",
-					"pathName": "pages/discount/index",
+					"name": "优惠券历史",
+					"pathName": "pages/hotel/bookHistory/index",
 					"query": "",
 					"scene": null
 				}

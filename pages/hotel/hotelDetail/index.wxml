@@ -17,7 +17,7 @@
     <!-- 一行 -->
     <view class="location">
       <view class="filter">
-        <image src="../../../res/iconfont/导航.png" style="width:13px;height:13px"></image>
+        <image src="../../../res/iconfont/导航.png" style="width:24px;height:24px"></image>
         <text class="text2">一键导航</text>
       </view>
       <view style='color:#ccc;text-align: center;'>|</view>
@@ -29,7 +29,7 @@
     <!-- 一行 -->
     <view class="location">
       <view class="filter">
-        <image src="../../../res/iconfont/优惠券 .png" style="width:22px;height:22px"></image>
+        <image src="../../../res/iconfont/券.png" style="width:22px;height:22px"></image>
         <text class="text3">入住后7张优惠券生效</text>
       </view>
     </view>
@@ -38,7 +38,7 @@
 <image class="top-image" src="../../../res/images/text-adver.png"></image>
 <view class="nothing"></view>
 <!-- 中间的内容 -->
-<view class='MediumContent'>
+<view class='MediumContent' style="overflow:hidden">
   <view>深圳市百姓渔村</view>
   <view style='margin-top:10rpx;'>房型：标准单人间</view>
   <view style='margin-top:10rpx;'>房型：标准单人间</view>
