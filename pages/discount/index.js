@@ -26,8 +26,49 @@ Page({
    */
   onLoad: function (options) {
     this.getDiscountCard();
+    // let id = ''
+    wx.request({
+      url: 'http://159.138.27.178:3000/api/event/?openId=12&status=' + '',
+      method: 'GET',
+      success: res => {
+        console.log(res);
+      },
+      fail: rej => {
+        console.log(rej);
 
+      }
+    })
 
+    // wx.request({
+    //   url: 'http://159.138.27.178:3000/api/event/fix',
+    //   method: 'POST',
+    //   data: JSON.stringify({
+    //     _id: 'd644cf8b5f3aa30800042f8b03baa79c',
+    //     status: 'done'
+    //   }),
+    //   success: res => {
+    //     console.log(res);
+
+    //   }
+
+    // })
+
+    // wx.request({
+    //   url: 'http://159.138.27.178:3000/api/orderForm/new',
+    //   method: 'POST',
+    //   data: JSON.stringify({
+    //     test:123,
+    //     abc:234
+    //   })
+    // })
+
+    wx.request({
+      url: 'http://159.138.27.178:3000/api/orderForm?openid=123',
+      method: 'GET',
+      success: res => {
+        console.log(res);
+      }
+    })
   },
 
   /**
@@ -41,9 +82,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if(app.cardChange){//若优惠券变化了
+    if (app.cardChange) { //若优惠券变化了
       this.getDiscountCard()
-      app.cardChange=false
+      app.cardChange = false
     }
   },
 

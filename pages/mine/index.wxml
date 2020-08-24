@@ -4,10 +4,10 @@
   <!-- <button  open-type="getUserInfo" class="head-img">
     <image src="../../res/images/ic_mine_.png"></image>
   </button> -->
-  <open-data class="head-img" type="userAvatarUrl"></open-data> 
+  <open-data class="head-img" type="userAvatarUrl"></open-data>
 
   <view class="text">
-    <open-data type="userNickName" class="user-name"></open-data>  
+    <open-data type="userNickName" class="user-name"></open-data>
     <!-- <view class="user-name">点击头像登录</view> -->
     <view class="detail">
       <view class="nav">
@@ -23,13 +23,13 @@
 
 <!-- 订单历史 -->
 <view class="history">
-  <view class=" item">
+  <view class=" item" bindtap="enterHotelHis">
     <view class="title">我的订单 <view class="img">
         <image src="../../res/images/ic_red-arrow.png"></image>
       </view>
     </view>
-    <view class="img" >
-      <image src="../../res/images/"></image>
+    <view class="img">
+      <image src="../../res/images/ic_hotel.png"></image>
     </view>
   </view>
   <view class=" item" bindtap="enterDisHis">
@@ -43,4 +43,3 @@
   </view>
 
 </view>
-

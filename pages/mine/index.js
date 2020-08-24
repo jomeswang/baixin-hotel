@@ -11,8 +11,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  },
+  onLoad: function (options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -49,10 +48,19 @@ Page({
       url: '../history_discount/index',
     })
   },
+
+  /**
+   * 进入订房历史
+   */
+  enterHotelHis() {
+    wx.navigateTo({
+      url: '../history_hotel/index',
+    })
+  },
   /**
    * 打电话
    */
-  callPhone(){
+  callPhone() {
     wx.makePhoneCall({
       phoneNumber: '15816542132',
     })
