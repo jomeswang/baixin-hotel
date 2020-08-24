@@ -1,0 +1,9 @@
+<view class="bill">
+	<view class="img">
+		<image src="../../res/images/complete.png"></image>
+	</view>
+	<view class="tips">原消费金额已核销</view>
+	<view class="money">￥{{money}}</view>
+</view>
+
+<view class="button" catchtap="handleButton">完成</view>

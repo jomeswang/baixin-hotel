@@ -1,35 +1,11 @@
-// pages/hotel/bookHistory/index.js
+// pages/history_hotel/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    roomArray: [
-      {
-           image: '../../../res/images/ic_hotel_image.png',
-           name: '标准单人间',
-           service: 'WiFi/有窗/空调',
-           price: 158,
-           num:0
-           
-      }, {
-           image: '../../../res/images/ic_hotel_image.png',
-           name: '标准双人间',
-           service: 'WiFi/有窗/空调',
-           price: 258
-      }, {
-           image: '../../../res/images/ic_hotel_image.png',
-           name: '豪华单人间',
-           service: 'WiFi/有窗/空调',
-           price: 198
-      }, {
-           image: '../../../res/images/ic_hotel_image.png',
-           name: '豪华双人间',
-           service: 'WiFi/有窗/空调',
-           price: 358
-      },
- ],
+
   },
 
   /**

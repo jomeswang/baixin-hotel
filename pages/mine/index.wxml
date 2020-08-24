@@ -1,2 +1,46 @@
-<!--pages/mine/index.wxml-->
-<text>pages/mine/index.wxml</text>
+<!-- 用户信息 -->
+<view class="user-wrapper">
+
+  <!-- <button  open-type="getUserInfo" class="head-img">
+    <image src="../../res/images/ic_mine_.png"></image>
+  </button> -->
+  <open-data class="head-img" type="userAvatarUrl"></open-data> 
+
+  <view class="text">
+    <open-data type="userNickName" class="user-name"></open-data>  
+    <!-- <view class="user-name">点击头像登录</view> -->
+    <view class="detail">
+      <view class="nav">
+        <image src="../../res/images/ic_nav.png"></image> <text>一键导航</text>
+      </view>
+      <view class="line">|</view>
+      <view class="tel" bindtap="callPhone">
+        <image src="../../res/images/ic_nav.png"></image><text>联系电话</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 订单历史 -->
+<view class="history">
+  <view class=" item">
+    <view class="title">我的订单 <view class="img">
+        <image src="../../res/images/ic_red-arrow.png"></image>
+      </view>
+    </view>
+    <view class="img" >
+      <image src="../../res/images/"></image>
+    </view>
+  </view>
+  <view class=" item" bindtap="enterDisHis">
+    <view class="title">优惠券历史 <view class="img">
+        <image src="../../res/images/ic_red-arrow.png"></image>
+      </view>
+    </view>
+    <view class="img">
+      <image src="../../res/images/ic_discount.png"></image>
+    </view>
+  </view>
+
+</view>
+

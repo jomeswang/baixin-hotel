@@ -1,0 +1,49 @@
+
+.wrapper {
+  box-sizing: border-box;
+  position: relative;
+  width: 656rpx;
+  height: 332rpx;
+  padding: 52rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 6rpx 20rpx rgba(0, 0, 0, .11);
+  margin: 124rpx auto;
+  background-color: #fff;
+  text-align: center;
+  color: #484843;
+}
+
+.wrapper .like-img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 88rpx;
+  height: 88rpx;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper .title {
+  display: block;
+  font-size: 48rpx;
+  color: #EB4A42;
+  margin-bottom: 12rpx;
+}
+
+.wrapper .tips {
+  display: block;
+  margin-bottom: 38rpx;
+  font-size: 24rpx;
+
+}
+
+
+.wrapper .input {
+  box-sizing: border-box;
+  padding: 16rpx;
+  width: 336rpx;
+  height: 72rpx;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  background-color: rgba(253, 125, 76, 0.15);
+}

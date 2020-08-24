@@ -1,0 +1,55 @@
+page {
+  background-color: #FFFAFA;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
+.bill {
+  margin: 134rpx 48rpx;
+  width: 654rpx;
+  height: 758rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 12rpx 40rpx rgba(0, 0, 0, .11);
+  background-color: white;
+  overflow: hidden;
+}
+
+.bill .img {
+  width: 114rpx;
+  height: 114rpx;
+  margin: 56rpx auto;
+}
+
+.bill .tips {
+  content: #484343;
+  text-align: center;
+  font-size: 40rpx;
+}
+
+.bill .money {
+  width: 465rpx;
+  height: 193rpx;
+  font-size: 108rpx;
+  line-height: 193rpx;
+  text-align: center;
+  color: #EB4A42;
+  background-color: rgba(253, 125, 76, 0.15);
+  border-radius: 30rpx;
+  margin: 136rpx auto;
+}
+
+.button {
+  width: 577rpx;
+  height: 130rpx;
+  line-height: 130rpx;
+  background-color: #EB4A42;
+  border-radius: 20rpx;
+  color: white;
+  font-size: 40rpx;
+  margin: 156rpx auto;
+  text-align: center;
+}
+

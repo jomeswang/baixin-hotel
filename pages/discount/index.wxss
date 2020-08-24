@@ -1,24 +1,38 @@
-.commodity_screen {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #000;
-  opacity: 0.2;
-  overflow: hidden;
-  z-index: 1000;
-  color: #fff;
+/* 页面背景颜色 */
+page {
+  background-color: #FFFAFA;
 }
-/*对话框 */
-.commodity_attr_box {
-  height: 300rpx;
+
+
+/* 优惠券区域 */
+.discount-wrapper {
+  padding: 42rpx 48rpx;
+
+}
+
+/* 优惠券导航 */
+.discount-wrapper .nav {
+  display: flex;
+  display: -webkit-flex;
   width: 100%;
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 2000;
-  background: #fff;
-  padding-top: 20rpx;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  color: #EB4A42;
+  font-size: 28rpx;
+  /* font-weight: bold; */
+}
+
+.discount-wrapper .nav .item {
+  width: 202rpx;
+  height: 56rpx;
+  border-radius: 28rpx;
+  border: 1px solid #EB4A42;
+  background-color: white;
+  text-align: center;
+  line-height: 56rpx;
+}
+
+.discount-wrapper .nav .item.active {
+  background-color: #EB4A42;
+  color: white;
 }

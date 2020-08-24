@@ -1,1 +1,24 @@
-<timer></timer>
+<!-- 优惠券码输入区 -->
+<!-- <CodeInput wx:if="{{showCodeInput}}" title="请输入优惠券提取码" tips="办理入住后酒店打印的订单上有优惠券提取码哦" bindInput='handleInput'></CodeInput> -->
+
+<!-- 优惠券使用区 -->
+<view class="discount-wrapper">
+	<!-- 优惠券导航 -->
+	<view class="nav">
+		<view bindtap="ChangeItems" class="item {{showIndex==0?'active':''}} " data-index="0">餐饮券</view>
+		<view bindtap="ChangeItems" class="item {{showIndex==1?'active':''}} " data-index="1">客房券</view>
+		<view bindtap="ChangeItems" class="item {{showIndex==2?'active':''}} " data-index="2">棋牌券</view>
+	</view>
+	<!-- 优惠券卡片 -->
+
+	<view hidden="{{showIndex!=0}}">
+		<discountCard bindButton="handleButton"  cardArr="{{eatCardArr}}"></discountCard>
+	</view>
+	<view hidden="{{showIndex!=1}}">
+		<discountCard bindButton="handleButton" cardArr="{{roomCardArr}}"></discountCard>
+	</view>
+	<view hidden="{{showIndex!=2}}">
+		<discountCard bindButton="handleButton" cardArr="{{chessCardArr}}"></discountCard>
+	</view>
+
+</view>

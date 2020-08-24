@@ -1,17 +1,20 @@
-// pages/mine/index.js
+// pages/showPay/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    money: 0 //原消费金额
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      money: options.money
+    })
   },
 
   /**
@@ -41,21 +44,10 @@ Page({
   onUnload: function () {
 
   },
-  /**
-   * 进入优惠券历史
-   */
-  enterDisHis() {
-    wx.navigateTo({
-      url: '../history_discount/index',
+  handleButton() {
+    wx.switchTab({
+      url: '../discount/index',
     })
   },
-  /**
-   * 打电话
-   */
-  callPhone(){
-    wx.makePhoneCall({
-      phoneNumber: '15816542132',
-    })
-  }
 
 })

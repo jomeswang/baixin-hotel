@@ -1,4 +1,4 @@
-// pages/mine/index.js
+// pages/history_discount/index.js
 Page({
 
   /**
@@ -12,6 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
   },
 
   /**
@@ -41,21 +42,25 @@ Page({
   onUnload: function () {
 
   },
-  /**
-   * 进入优惠券历史
-   */
-  enterDisHis() {
-    wx.navigateTo({
-      url: '../history_discount/index',
-    })
-  },
-  /**
-   * 打电话
-   */
-  callPhone(){
-    wx.makePhoneCall({
-      phoneNumber: '15816542132',
-    })
-  }
 
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
 })

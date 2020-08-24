@@ -1,0 +1,7 @@
+<view class="wrapper">
+	<image class="like-img" src="../../res/images/ic_like.png"></image>
+	<text class="title">{{title}}</text>
+	<text class="tips">{{tips}}</text>
+	<input maxlength="{{length}}" type="number" class="input" placeholder="在此输入"
+		placeholder-style="font-size:24rpx;color: rgba(72, 67, 67, 0.58);" bindinput="onInput"></input>
+</view>

@@ -1,0 +1,42 @@
+<view class="card">
+  <view class="top">
+    <view class="left">豪华大床房
+    </view>
+    <view class="right">豪华大床房
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="left">豪华大床房
+    </view>
+    <view class="right">豪华大床房
+    </view>
+  </view>
+</view>
+
+<view class="card">
+  <view class="top">
+    <view class="left">豪华大床房
+    </view>
+    <view class="right">豪华大床房
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="left">豪华大床房
+    </view>
+    <view class="right">豪华大床房
+    </view>
+  </view>
+</view><view class="card">
+  <view class="top">
+    <view class="left">豪华大床房
+    </view>
+    <view class="right">豪华大床房
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="left">豪华大床房
+    </view>
+    <view class="right">豪华大床房
+    </view>
+  </view>
+</view>

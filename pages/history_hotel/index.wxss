@@ -1,0 +1,38 @@
+/* pages/history_hotel/index.wxss */
+page {
+  background-color: #FFFAFA;
+  color: #484343;
+}
+
+.card {
+  margin: 40rpx auto;
+  box-sizing: border-box;
+  width: 656rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, .1);
+  padding: 40rpx;
+  background-color: white;
+}
+
+.card .top {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  font-size: 40rpx;
+  width: 100%;
+  margin-bottom: 18rpx;
+}
+
+.card .bottom {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  font-size: 26rpx;
+  width: 100%;
+}
+
+.card .right {
+  color: #EB4A42;
+}

@@ -5,8 +5,8 @@
     "pages/mine/index",
     "pages/logs/logs",
     "pages/hotel/hotelDetail/index",
-    "pages/hotel/bookHotel/index",
-    "pages/hotel/bookHistory/index"
+    "pages/hotel/bookHotel/index"
+ 
 
 
   ],
@@ -30,12 +30,16 @@
       },
       {
         "pagePath": "pages/discount/index",
-        "text": "优惠券"
+        "text": "优惠券",
+        "iconPath": "res/iconfont/discount(1).png",
+        "selectedIconPath": "res/iconfont/discount.png"
 
 
       }, {
         "pagePath": "pages/mine/index",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "res/iconfont/mine (1).png",
+        "selectedIconPath": "res/iconfont/mine.png"
 
       }
 

@@ -1,0 +1,39 @@
+<!-- 金额输入区 -->
+<CodeInput length="{{6}}" title="请输入消费原金额" tips="在完成服务之后，根据酒店告知的消费原金额填写" bindInput='handleInput'></CodeInput>
+
+<!-- 优惠券 -->
+<discountCard isUse="{{true}}" cardArr="{{cardArr}}"></discountCard>
+
+<!-- 账单 -->
+<view class="bill-wrapper"> 
+	<view class="item ">
+		<view class="title">消费类型</view>
+		<view class="content">{{type}}</view>
+	</view>
+	<view class="item ">
+		<view class="title">消费时间</view>
+		<view class="content">{{time}}</view>
+	</view>
+	<view class="item ">
+		<view class="title">消费原金额</view>
+		<view class="content red">¥{{money}}</view>
+	</view>
+	<view class="item ">
+		<view class="title">优惠券抵扣</view>
+		<view class="content red">
+			<view class="left">{{cardArr[0].title}} × 1</view>
+			<view wx:if="{{cardArr[0].disType=='money'}}" class="right">¥{{discount}}</view>
+			<view wx:if="{{cardArr[0].disType=='discount'}}" class="right">{{discount}}折</view>
+		</view>
+	</view>
+	<view class="item ">
+		<view class="title">合计实付款</view>
+		<view class="content red">¥{{actPay}}</view>
+	</view>
+</view>
+
+<!-- 支付区域 -->
+<view class="pay-wrapper">
+	<text class="text">在线结账 <text class="money red"> ¥{{actPay}}</text></text>
+	<view class="button" catchtap="handlePay">去支付</view>
+</view>
