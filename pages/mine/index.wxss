@@ -1,1 +1,120 @@
-/* pages/mine/index.wxss */
+page {
+  padding: 100rpx 48rpx;
+  background-color: #FFFAFA;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 用户登录区 */
+.user-wrapper {
+  position: relative;
+  width: 656rpx;
+  height: 176rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, .1);
+  background-color: white;
+}
+
+.user-wrapper .head-img {
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  left: 22rpx;
+  top: -56rpx;
+  width: 190rpx;
+  height: 190rpx;
+  background-color: white;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.16);
+  border-radius: 20rpx;
+}
+
+.user-wrapper .text {
+  margin-left: 246rpx;
+  font-size: 20rpx;
+  color: #EB4A42;
+}
+
+.user-wrapper .text .user-name {
+  display: block;
+  font-size: 30rpx;
+  color: black;
+  padding-top: 24rpx;
+  font-weight: bold;
+}
+
+.user-wrapper .text .detail {
+  display: flex;
+  display: -webkit-flex;
+  text-align: center;
+  margin-top: 28rpx;
+  line-height: 44rpx;
+}
+
+.user-wrapper .text .tel,
+.user-wrapper .text .nav {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 20rpx;
+  background-color: rgba(253, 125, 76, 0.15);
+  border-radius: 8rpx;
+  height: 44rpx;
+  width: 140rpx;
+  padding: 12rpx 14rpx;
+
+}
+
+.user-wrapper .text .line {
+  width: 46rpx;
+  height: 44rpx;
+}
+
+.user-wrapper .text image {
+  vertical-align: top;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+/* 历史订单 */
+
+.history {
+  width: 656rpx;
+  margin-top: 58rpx;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+.history .item {
+  box-sizing: border-box;
+  padding: 24rpx;
+  width: 310rpx;
+  height: 270rpx;
+  border-radius: 20rpx;
+  background-color: white;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.1);
+}
+
+.history .item .title {
+  display: flex;
+  display: -webkit-flex;
+  font-size: 30rpx;
+  color: black;
+  margin-bottom: 12rpx;
+}
+
+.history .item .title .img {
+  margin-left: 10rpx;
+  width: 13rpx;
+  height: 23rpx;
+}
+
+.history .item .img {
+  margin: 0 auto;
+  width: 260rpx;
+  height: 180rpx;
+}

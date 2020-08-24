@@ -1,0 +1,153 @@
+/* 优惠券卡片 */
+.card {
+  display: flex;
+  display: -webkit-flex;
+  position: relative;
+  width: 656rpx;
+  height: 250rpx;
+  border-radius: 20rpx;
+  /* background:white url('../../res/images/ic_card_bgc.png') no-repeat right top/ auto 100%; */
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 72rpx;
+  font-size: 24rpx;
+  box-shadow: 0 0 12rpx rgba(0, 0, 0, .11);
+}
+
+.card.gray {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.card .mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+}
+
+.card .sign {
+  position: absolute;
+  left: 20rpx;
+  transform: translateY(-50%);
+  width: 174rpx;
+  height: 56rpx;
+  font-size: 28rpx;
+  color: white;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 56rpx;
+  background-color: #EB4A42;
+}
+
+.card .finish {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 126rpx;
+  height: 126rpx;
+}
+
+.card .img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 310rpx;
+}
+
+.card .left {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 356rpx;
+  padding: 64rpx 0 0 54rpx;
+  color: #484343;
+}
+
+.card .left .title {
+  display: flex;
+  display: -webkit-flex;
+  color: #EB4A42;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+
+.card .left .title .times {
+  margin-left: 40rpx;
+}
+
+.card .left .rule {
+  display: flex;
+  display: -webkit-flex;
+  font-size: 16rpx;
+  padding: 12rpx 0;
+  /* background-color: red; */
+}
+
+.card .left .rule .image {
+  position: relative;
+  width: 14rpx;
+  height: 8rpx;
+}
+
+.card .left .rule .image .img {
+  position: absolute;
+  left: 8rpx;
+  top: 8rpx;
+  width: 14rpx;
+  height: 8rpx;
+}
+
+
+.card .right {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+  justify-content: center;
+  -webkit-justify-content: center;
+  color: white;
+  box-sizing: border-box;
+  width: 300rpx;
+  /* padding: 20rpx 30rpx 0 0; */
+  padding-right: 30rpx;
+  text-align: right;
+}
+
+.card .right .discount {
+  display: flex;
+  display: -webkit-flex;
+  align-items: flex-start;
+  -webkit-align-items: flex-start;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+}
+
+.card .right .type {
+  font-size: 48rpx;
+}
+
+.card .right .num {
+  font-size: 70rpx;
+}
+
+.card .right .button {
+  width: 174rpx;
+  height: 56rpx;
+  font-size: 28rpx;
+  color: #EB4A42;
+  border-radius: 40rpx;
+  margin-top: 20rpx;
+  text-align: center;
+  line-height: 56rpx;
+  background-color: white;
+}

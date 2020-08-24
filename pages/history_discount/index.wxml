@@ -1,0 +1,21 @@
+<!-- <text class="text">暂无优惠券使用历史哦\n前往【优惠券页】享受优惠吧</text> -->
+
+<view class="bill">
+  <view class="top">
+    <view class="type red">早茶券¥15</view>
+    <view class="num red">×1</view>
+    <view class="time">2020-12-02 8:00</view>
+  </view>
+  <view class="mid">消费原金额：¥98.00</view>
+  <view class="bottom">实际付款：¥83.00</view>
+</view>
+
+<view class="bill">
+  <view class="top">
+    <view class="type red">早茶券¥15</view>
+    <view class="num red">×1</view>
+    <view class="time">2020-12-02 8:00</view>
+  </view>
+  <view class="mid">消费原金额：¥98.00</view>
+  <view class="bottom">实际付款：¥83.00</view>
+</view>

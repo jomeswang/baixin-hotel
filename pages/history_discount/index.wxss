@@ -1,0 +1,47 @@
+page {
+  padding-top: 48rpx;
+  color: #484343;
+}
+
+.text {
+  display: block;
+  margin: 404rpx auto;
+  width: 580rpx;
+  text-align: center;
+  font-size: 36rpx;
+}
+
+.red {
+  font-size: 40rpx;
+  color: #EB4A42;
+}
+
+.bill {
+  box-sizing: border-box;
+  margin: auto;
+  margin-bottom: 60rpx;
+  width: 656rpx;
+  padding: 42rpx 32rpx;
+  background-color: white;
+  border-radius: 20rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, .1);
+  font-size: 32rpx;
+}
+
+.bill .top {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.bill .top .time {
+  font-size: 26rpx;
+  line-height: 52rpx;
+}
+
+.bill .top .num {
+  margin: 0 58rpx;
+}
+
+.bill .mid {
+  margin: 18rpx 0;
+}
