@@ -67,6 +67,25 @@ Page {
   box-shadow: 0rpx 6rpx 20rpx #ccc;
   background: white;
   font-size: 30rpx;
+  height: 270rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  word-wrap:break-word;
+  white-space: pre-line;
+
+}
+.specification{
+  line-height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4
 }
 .content-right{
   display: flex;

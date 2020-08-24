@@ -96,6 +96,15 @@ border-radius: 40rpx;
   background: white;
   font-size: 30rpx;
 }
+.specification{
+  line-height: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4
+}
 .content-right{
   display: flex;
   flex-direction: row-reverse;
