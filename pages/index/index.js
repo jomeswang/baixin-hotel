@@ -26,6 +26,26 @@ var endWeek;
 var endOfEndDate = '2020-12-31';
 
 var dayCount = 1;
+//首页收到的数据
+var id;
+var name;
+var description;
+var area;
+var bed;
+var peopleNum;
+var addBed;
+var morningTea;
+var window;
+var bathroom;
+var convenience;
+var guestRoom;
+var introduction;
+var price;
+var deposit;
+var imgUrl;
+var read;
+var bookKnow;
+var roomNum
 
 // 点赞
 
@@ -108,6 +128,18 @@ Page({
     this.initEndDate();
 
     this.setSearchDate();
+    wx.request({
+      url: 'http://159.138.27.178:3000/api/room/',
+      method:"GET",
+      success:e=>{
+        console.log(e.data[0])
+        this.setData({
+
+        })
+        
+      }
+      
+    })
 
   },
   likesItem:function(e){
@@ -248,7 +280,7 @@ Page({
   handleItem(e){
    
    wx.navigateTo({
-     url: '../../pages/hotel/bookHotel/index?startDate='+this.data.startDate+"&endDate="+this.data.endDate,
+     url: '../../pages/hotel/bookHotel/index?startDate='+this.data.startDate+"&endDate="+this.data.endDate+"&dayCount="+this.data.dayCount,
    })
   },
     //点击我显示底部弹出框

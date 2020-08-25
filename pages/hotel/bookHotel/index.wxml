@@ -33,7 +33,11 @@ TIP：没有付定金的情况下，我们不保证一定有床位。付了定�
 3、预定节假日（五一、端午、国庆、中秋，春节，糖酒会等）的房间不接收改期和退订。</text>
     </view>
     <!-- 详细订单 -->
-    <formList></formList>
+    <formList startDate="{{startDate}}"
+    endDate="{{endDate}}"
+    
+
+    ></formList>
 <!-- 价格首 -->
     	<view class="cu-form-group margin-top">
 		<view class="title">房型费用</view>
@@ -53,11 +57,3 @@ TIP：没有付定金的情况下，我们不保证一定有床位。付了定�
   <!-- 价格末 -->
   </view>
 </scroll-view>
-<!-- <view class='payItem'>
-  <view class='priceItem'>
-    <text>应付：</text>
-    <text>¥{{roomPrice}}</text>
-    <text wx:if='{{isDiscount}}' class='payMsg'>(已优惠{{discount}}元)</text>
-  </view>
-  <button class='payBtn' formTpye="submit">立即支付</button>
-</view> -->

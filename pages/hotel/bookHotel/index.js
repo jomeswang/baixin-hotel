@@ -5,6 +5,7 @@ var hotelName;
 var roomName;
 var startDate;
 var endDate;
+var dayCount
 
 Page({
 
@@ -18,7 +19,8 @@ Page({
     roomName,
     startDate,
     endDate,
-    discount: '598'
+    discount: '598',
+    dayCount
   },
 
   /**
@@ -32,6 +34,7 @@ Page({
     roomName = options.roomName;
     startDate = options.startDate;
     endDate = options.endDate;
+    dayCount=options.dayCount
 
     this.setData({
       roomPrice: roomPrice,
@@ -39,6 +42,7 @@ Page({
       roomName: roomName,
       startDate: startDate,
       endDate: endDate,
+      dayCount:dayCount
   
 
     });
