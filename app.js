@@ -1,5 +1,8 @@
 //app.js
 App({
+  data:{
+    isConnect:null
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -10,7 +13,9 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        
       }
+
     })
     // 获取用户信息
     wx.getSetting({
@@ -33,7 +38,57 @@ App({
       }
     })
   },
+  onShow(options){
+    wx.onSocketMessage((res) => {
+      console.log(res.data)
+      console.log(res)
+    })
+  },
+  
   globalData: {
     userInfo: null
-  }
+  },
+  startClick(even) {
+    wx.connectSocket({
+      url: 'ws://159.138.27.178:9999',
+      method: 'GET',
+      success: (res) => {
+        isConnect: true
+        console.log("连接成功", res)
+      },
+      fail: (res) => {
+        isConnect: false
+        console.log("连接失败", res)
+      }
+    });
+
+    wx.onSocketOpen((res) => {
+      console.log('WebSocket连接已打开！')
+    });
+
+    wx.onSocketError((res) => {
+      console.log('WebSocket连接打开失败，请检查！')
+    })
+  },
+
+  sendClick: function (even) {
+    wx.sendSocketMessage({
+      data: "From微信小程序 web socket"
+    })
+  },
+
+  closeClick(even) {
+    wx.closeSocket({
+      success: (res) => {
+        console.log("关闭成功...")
+      },
+      fail: (res) => {
+        console.log("关闭失败...")
+      }
+    });
+    wx.onSocketClose((res)=>  {
+      console.log("WebSocket连接已关闭")
+    })
+  },
+
 })

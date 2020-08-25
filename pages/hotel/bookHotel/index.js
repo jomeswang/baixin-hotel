@@ -5,7 +5,12 @@ var hotelName;
 var roomName;
 var startDate;
 var endDate;
-var dayCount
+var dayCount;
+var name;
+var read;
+var price;
+var deposit;
+var status;
 
 Page({
 
@@ -14,13 +19,17 @@ Page({
    */
   data: {
     isDiscount: false,
-    roomPrice,
-    hotelName,
-    roomName,
+    
+    name,
     startDate,
     endDate,
-    discount: '598',
-    dayCount
+    dayCount,
+    read,
+    price,
+    deposit,
+    status
+    
+
   },
 
   /**
@@ -28,22 +37,30 @@ Page({
    */
   onLoad: function (options) {
     // 放入接口请求的   后面我看看
-
-    roomPrice = options.price;
-    hotelName = options.hotelName;
-    roomName = options.roomName;
+    
+    // roomPrice = options.price;
+    // hotelName = options.hotelName;
+    // roomName = options.roomName;
+    name=options.name;
     startDate = options.startDate;
     endDate = options.endDate;
-    dayCount=options.dayCount
+    dayCount=options.dayCount;
+    read=options.read;
+    price=options.price;
+    deposit=options.deposit;
+    status=options.status
+    
 
     this.setData({
-      roomPrice: roomPrice,
-      hotelName: hotelName,
-      roomName: roomName,
+      name:name,
       startDate: startDate,
       endDate: endDate,
-      dayCount:dayCount
-  
+      dayCount:dayCount,
+      read:read,
+      price:price,
+      deposit:deposit,
+      status:"待确认"
+
 
     });
   },

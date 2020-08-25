@@ -4,7 +4,7 @@
   <view class='bookBody'>
     <view class='bookMsg'>
       <view>{{hotelName}}</view>
-      <view style='margin-top:10rpx;'>房型：{{roomName}}</view>
+      <view style='margin-top:10rpx;'>房型：{{name}}</view>
     </view>
     <view class='bookMsg'>
       <view style='margin-top:10rpx;'>入住/离开：{{startDate}}  /  {{endDate}}</view>
@@ -41,12 +41,12 @@ TIP：没有付定金的情况下，我们不保证一定有床位。付了定�
 <!-- 价格首 -->
     	<view class="cu-form-group margin-top">
 		<view class="title">房型费用</view>
-    <view>$100</view>
+    <view>{{price}}</view>
 	</view>
       	<view class="cu-form-group">
 		<view class="title">押金</view>
 
-    <view>$100</view>
+    <view>{{deposit}}</view>
 	</view>
       	<view class="cu-form-group">
 		<view class="title">合计</view>

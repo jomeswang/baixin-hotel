@@ -45,8 +45,8 @@ var deposit;
 var imgUrl;
 var read;
 var bookKnow;
-var roomNum
-
+var roomNum;
+var arr1=""
 // 点赞
 
 
@@ -82,6 +82,27 @@ Page({
     hotelAddress: '',
     // 点赞
     likes:1,
+    // 首页得到的数据
+     id:"",
+ name:"",
+ description:"",
+ area:"",
+ bed:"",
+ peopleNum:"",
+ addBed:"",
+ morningTea:"",
+ window:"",
+ bathroom:"",
+ convenience:"",
+ guestRoom:"",
+ introduction:"",
+ price:"",
+ deposit:"",
+ imgUrl:"",
+ read:"",
+ bookKnow:"",
+ roomNum:"",
+ roomArr:[],
    
     roomArray: [
          {
@@ -132,10 +153,23 @@ Page({
       url: 'http://159.138.27.178:3000/api/room/',
       method:"GET",
       success:e=>{
-        console.log(e.data[0])
-        this.setData({
+        e.data.forEach((item,index)=>{
+         
+        // console.log(JSON.parse(item))
+          this.setData({
+           roomArr:this.data.roomArr.concat( JSON.parse(item)),
+          })
 
         })
+
+
+      console.log(this.data.roomArr)
+        // this.setData({
+        //   arr1:JSON.parse(e)
+
+        // })
+        // console.log( 
+        //   this.data.arr1)
         
       }
       
@@ -278,9 +312,9 @@ Page({
   },
   // 订房的跳转
   handleItem(e){
-   
+   const index=e.currentTarget.dataset.id
    wx.navigateTo({
-     url: '../../pages/hotel/bookHotel/index?startDate='+this.data.startDate+"&endDate="+this.data.endDate+"&dayCount="+this.data.dayCount,
+     url: '../../pages/hotel/bookHotel/index?startDate='+this.data.startDate+"&endDate="+this.data.endDate+"&dayCount="+this.data.dayCount+"&name="+this.data.name+"&read="+this.data.read+"&price="+this.data.price+"&deposit="+this.data.deposit+"&status"+this.data.status,
    })
   },
     //点击我显示底部弹出框

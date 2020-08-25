@@ -103,7 +103,8 @@
   </view>
 </view>
 <!-- 日期end -->
-<template is='roomListItem' wx:for='{{roomArray}}' data="{{imageUrl:item.image,roomName:item.name,services:item.service,price:item.price,eating:item.eating,time:item.time,index:index,bookTap:'bookRoom'}}"/>
+<template is='roomListItem' wx:for='{{roomArr}}' data-id="{{index}}" data="{{imageUrl:item.imgUrl[0].url,roomName:item.name,services:item.convenience,price:item.price,eating:item.morningTea,time:item.time,index:index,bookTap:'bookRoom'}}"/>
+<!-- 11111111111 -->
 <template is='roomEmpty' wx:for='{{roomArray}}' data="{{imageUrl:item.image,roomName:item.name,services:item.service,price:item.price,index:index,bookTap:'bookRoom'}}"/>
 <!--屏幕背景变暗的背景  -->
   <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>

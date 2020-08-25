@@ -157,7 +157,7 @@ Component({
             order_end_time:this.data.endDate,
             order_room_type:"标准单人间",
             price:"价格",
-            depostit:"押金",
+            deposit:"押金",
             // 需要进行判断的时间
             status:"成功",
             reachTime:this.data.time,  

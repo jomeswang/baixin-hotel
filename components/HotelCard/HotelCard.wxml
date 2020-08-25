@@ -4,7 +4,7 @@
     <view class='content'>
       <text class='roomName'>{{roomName}}</text>
       <text class='roomService'>{{services}}</text>
-       <text class='roomService' style="font-size:10px">{{eating}} {{time}}</text>
+       <text class='roomService' style="font-size:10px">{{eating}} 当天1800前可以免费取消</text>
       <!-- 一行 -->
       <view class='priceItem'>
         <image src="../../res/iconfont/券.png" style="width:20px;height:20px; vertical-align:middle"></image>
@@ -17,7 +17,7 @@
         <text class='priceTip'>起</text>
       </view>
     </view>
-    <view class='bookBtn' hover-class='bookBtnHover' catchtap="handleItem" data-index='{{index}}'>
+    <view class='bookBtn' data-id="{{index}}" hover-class='bookBtnHover' catchtap="handleItem" data-index='{{index}}'>
       预订
     </view>
   </view>
@@ -31,9 +31,16 @@
     <view class='content'>
       <text class='roomName'>{{roomName}}</text>
       <text class='roomService'>{{services}}</text>
+       <text class='roomService' style="font-size:10px">{{eating}} 当天1800前可以免费取消</text>
+      <!-- 一行 -->
       <view class='priceItem'>
-        <text id='price'>¥</text>
-        <text id='price'>{{price}}</text>
+        <image src="../../res/iconfont/券.png" style="width:20px;height:20px; vertical-align:middle"></image>
+        <text class='price' >订就送7张优惠券</text>
+        <text class='priceTip'></text>
+      </view>
+      <view class='priceItem' >
+        <text class='price'>¥</text>
+        <text class='price' style="font-size:34rpx">{{price}}</text>
         <text class='priceTip'>起</text>
       </view>
     </view>
