@@ -78,13 +78,6 @@
 					"pathName": "pages/hotel/hotelDetail/index",
 					"query": "",
 					"scene": null
-				},
-				{
-					"id": 2,
-					"name": "前端test",
-					"pathName": "pages/hotel/test/test",
-					"query": "",
-					"scene": null
 				}
 			]
 		}

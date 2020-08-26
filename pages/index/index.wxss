@@ -45,32 +45,33 @@ Page {
   box-sizing: border-box;
   position: absolute;
   top: 400rpx;
+  z-index:3;
   padding: 0 28rpx;
-
+  height:460rpx;
 }
 
 .filterView {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  height: max-content;
+  /* height: max-content; */
   width: 100%;
   box-shadow: 0rpx 8rpx 20rpx #bbb;
   border-radius: 20px 20px 20px 20px;
-  background: white;
+  /* background: white; */
   border-radius: 40rpx;
 }
 
 .location {
-  width: 100%;
-  height: max-content;
+  flex:1;
+  /* height: max-content; */
   box-sizing: border-box;
   padding: 2rpx 30rpx;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   align-items: center;
-  border-bottom: 1rpx solid white;
-  flex-wrap: wrap;
+  /* border-bottom: 1rpx solid white; */
+  /* flex-wrap: wrap; */
   background-color: white;
 }
 
@@ -186,13 +187,6 @@ Page {
   font-size: 26rpx;
   color: black;
 }
-.last-line{
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
 
 /* start */
 .dateContent {
@@ -248,8 +242,8 @@ Page {
 /* ......end */
 .nothing {
   z-index: 2;
-  height: 51%;
-  background-color: white;
+  height: 460rpx;
+  background-color: wi;
 }
 
 .roomListItem {
@@ -409,11 +403,20 @@ Page {
 
 .likesActive {
   color: red;
+  flex:1;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom:20rpx;
 }
 
-.unlikeActive {
-  color: blue;
+.likesActive::after {
+  content:"👍点赞";
 }
+
+/* .unlikeActive {
+  color: blue;
+} */
 
 
 

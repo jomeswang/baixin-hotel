@@ -99,20 +99,23 @@ App({
   // 立旺的socket
 
   testWss(){
-    wx.connectSocket({
-      url: 'ws://159.138.27.178:9998'
-    })
-    wx.onSocketOpen(function (res) {
-      console.log('WebSocket连接已打开！')
-    })
-    wx.onSocketOpen(function (res) {
-      wx.sendSocketMessage({
-        data: "weapp message"
-      })
-    })
-    wx.onSocketMessage(function (res) {
-      console.log('小程序收到服务器消息：' + res.data)
-    })
-  }
+        wx.connectSocket({
+          url: 'ws://159.138.27.178:9998'
+        })
+        wx.onSocketOpen(function (res) {
+          console.log('WebSocket连接已打开！')
+        })
+        wx.onSocketOpen(function (res) {
+          setInterval(()=>{
+            wx.sendSocketMessage({
+              data: "weapp message"
+            })
+          }, 20000)
+    
+        })
+        wx.onSocketMessage(function (res) {
+          console.log('小程序收到服务器消息：' + res.data)
+        })
+      }
 
 })

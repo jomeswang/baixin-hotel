@@ -174,15 +174,15 @@ Page({
 
   },
   likesItem: function (e) {
-    console.log(this.data.likes)
-    if (this.data.likes === 1) {
-      this.setData({
-        likes: 0
-      })
-    } else
-      this.setData({
-        likes: 1
-      })
+    // console.log(this.data.likes)
+    // if (this.data.likes === 1) {
+    //   this.setData({
+    //     likes: 0
+    //   })
+    // } else
+    //   this.setData({
+    //     likes: 1
+    //   })
 
     //   if (likes===1) {
     //     likes=0
