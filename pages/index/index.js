@@ -26,7 +26,27 @@ var endWeek;
 var endOfEndDate = '2020-12-31';
 
 var dayCount = 1;
-
+//首页收到的数据
+var id;
+var name;
+var description;
+var area;
+var bed;
+var peopleNum;
+var addBed;
+var morningTea;
+var window;
+var bathroom;
+var convenience;
+var guestRoom;
+var introduction;
+var price;
+var deposit;
+var imgUrl;
+var read;
+var bookKnow;
+var roomNum;
+var arr1 = ""
 // 点赞
 
 
@@ -61,35 +81,55 @@ Page({
     hotelName: '',
     hotelAddress: '',
     // 点赞
-    likes:1,
-   
-    roomArray: [
-         {
-              image: '../../res/images/ic_hotel_image.png',
-              name: '标准单人间',
-              service: 'WiFi/有窗/空调',
-              eating:"早饭",
-              time:"当天18:00前可免费取消",
-              price: 158,
-      
-              
-         }, {
-              image: '../../res/images/ic_hotel_image.png',
-              name: '标准双人间',
-              service: 'WiFi/有窗/空调',
-              price: 258
-         }, {
-              image: '../../res/images/ic_hotel_image.png',
-              name: '豪华单人间',
-              service: 'WiFi/有窗/空调',
-              price: 198
-         }, {
-              image: '../../res/images/ic_hotel_image.png',
-              name: '豪华双人间',
-              service: 'WiFi/有窗/空调',
-              price: 358
-         },
-    ],
+    likes: 1,
+    // 首页得到的数据
+    id: "",
+    name: "",
+    description: "",
+    area: "",
+    bed: "",
+    peopleNum: "",
+    addBed: "",
+    morningTea: "",
+    window: "",
+    bathroom: "",
+    convenience: "",
+    guestRoom: "",
+    introduction: "",
+    price: "",
+    deposit: "",
+    imgUrl: "",
+    read: "",
+    bookKnow: "",
+    roomNum: "",
+    roomArr: [],
+    showArr: [],
+
+    roomArray: [{
+      image: '../../res/images/ic_hotel_image.png',
+      name: '标准单人间',
+      service: 'WiFi/有窗/空调',
+      eating: "早饭",
+      time: "当天18:00前可免费取消",
+      price: 158,
+
+
+    }, {
+      image: '../../res/images/ic_hotel_image.png',
+      name: '标准双人间',
+      service: 'WiFi/有窗/空调',
+      price: 258
+    }, {
+      image: '../../res/images/ic_hotel_image.png',
+      name: '豪华单人间',
+      service: 'WiFi/有窗/空调',
+      price: 198
+    }, {
+      image: '../../res/images/ic_hotel_image.png',
+      name: '豪华双人间',
+      service: 'WiFi/有窗/空调',
+      price: 358
+    }, ],
   },
   //事件处理函数
   bindViewTap: function () {
@@ -97,36 +137,58 @@ Page({
   },
   onLoad: function () {
 
-   
+
     startDate = currentDate;
     startYear = currentYear;
     startDay = currentDay;
     startMonth = currentMonth;
     startWeek = currentWeek;
 
-   
+
     this.initEndDate();
 
     this.setSearchDate();
+    wx.request({
+      url: 'http://159.138.27.178:3000/api/room/',
+      method: "GET",
+      success: e => {
+        e.data.forEach((item, index) => {
+
+          // console.log(JSON.parse(item))
+          this.setData({
+            roomArr: this.data.roomArr.concat(JSON.parse(item)),
+          })
+
+        })
+
+        // this.setData({
+        //   arr1:JSON.parse(e)
+        console.log(this.data.roomArr)
+        // })
+        // console.log( 
+        //   this.data.arr1)
+
+      }
+
+    })
 
   },
-  likesItem:function(e){
-    console.log(this.data.likes)
-    if (this.data.likes===1) {
-      this.setData({
-        likes:0
-      })
-    }
-      else  
-      this.setData({
-        likes:1
-      })
-    
-  //   if (likes===1) {
-  //     likes=0
-  // }
-  // else
-  //   likes=1
+  likesItem: function (e) {
+    // console.log(this.data.likes)
+    // if (this.data.likes === 1) {
+    //   this.setData({
+    //     likes: 0
+    //   })
+    // } else
+    //   this.setData({
+    //     likes: 1
+    //   })
+
+    //   if (likes===1) {
+    //     likes=0
+    // }
+    // else
+    //   likes=1
   },
 
 
@@ -194,7 +256,7 @@ Page({
       return 0;
     }
   },
-  
+
 
   formatDate: function (date) {
     return date.replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '').replace(/(-)/g, '/');
@@ -245,63 +307,74 @@ Page({
     });
   },
   // 订房的跳转
-  handleItem(e){
-   
-   wx.navigateTo({
-     url: '../../pages/hotel/bookHotel/index?startDate='+this.data.startDate+"&endDate="+this.data.endDate,
-   })
+  handleItem(e) {
+    const index = e.currentTarget.dataset.id
+    console.log(
+      this.data.roomArr[index]);
+    console.log();
+
+    wx.navigateTo({
+      // url: '../../pages/hotel/bookHotel/index?startDate=' + this.data.startDate + "&endDate=" + this.data.endDate + "&dayCount=" + this.data.dayCount + "&name=" + this.data.name + "&read=" + this.data.read + "&price=" + this.data.price + "&deposit=" + this.data.deposit + "&status" + this.data.status,
+      url: '../../pages/hotel/bookHotel/index?indexData=' + JSON.stringify(this.data.roomArr[index]) + "&startDate=" + this.data.startDate + "&endDate=" + this.data.endDate + "&dayCount=" + this.data.dayCount
+    })
   },
-    //点击我显示底部弹出框
-hotelItemTap:function(e){
-  console.log(e);
-  this.showModal();
-},
-
-
-//显示对话框
- showModal: function () {
-   // 显示遮罩层
-   var animation = wx.createAnimation({
-     duration: 200,
-     timingFunction: "linear",
-     delay: 0
-   })
-   this.animation = animation
-   animation.translateY(300).step()
-   this.setData({
-     animationData: animation.export(),
-     showModalStatus: true
-   })
-   setTimeout(function () {
-     animation.translateY(0).step()
-     this.setData({
-       animationData: animation.export()
-     })
-   }.bind(this), 200)
- },
- //隐藏对话框
- hideModal: function () {
-   // 隐藏遮罩层
-   var animation = wx.createAnimation({
-     duration: 200,
-     timingFunction: "linear",
-     delay: 0
-   })
-  //  点赞
-
-    
   
-   this.animation = animation
-   animation.translateY(300).step()
-   this.setData({
-     animationData: animation.export(),
-   })
-   setTimeout(function () {
-     animation.translateY(0).step()
-     this.setData({
-       animationData: animation.export(),
-       showModalStatus: false
-     })
-   }.bind(this), 200)
- }
+  //点击我显示底部弹出框
+  hotelItemTap: function (e) {
+    const index = e.currentTarget.dataset.id
+
+    this.setData({
+      showArr: this.data.roomArr[index]
+    })
+    console.log(this.data.showArr);
+    this.showModal();
+  },
+
+
+  //显示对话框
+  showModal: function () {
+    // 显示遮罩层
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
+    })
+    this.animation = animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(),
+      showModalStatus: true
+    })
+    setTimeout(function () {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export()
+      })
+    }.bind(this), 200)
+  },
+  //隐藏对话框
+  hideModal: function () {
+    // 隐藏遮罩层
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
+    })
+    //  点赞
+
+
+
+    this.animation = animation
+    animation.translateY(300).step()
+    this.setData({
+      animationData: animation.export(),
+    })
+    setTimeout(function () {
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export(),
+        showModalStatus: false
+      })
+    }.bind(this), 200)
+  }
 })

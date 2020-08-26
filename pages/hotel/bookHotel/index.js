@@ -1,10 +1,19 @@
 // pages/bookHotel/bookHotel.js
 // 接口有数据后来这里绑定
+// var util=require("../../../utils/util.js")
+// var DATE=util.formatTime(new Date())
 var roomPrice;
 var hotelName;
 var roomName;
 var startDate;
 var endDate;
+var dayCount;
+var name;
+var read;
+var price;
+var deposit;
+var status;
+var sum;
 
 Page({
 
@@ -13,12 +22,19 @@ Page({
    */
   data: {
     isDiscount: false,
-    roomPrice,
-    hotelName,
-    roomName,
+    sum,
+    name,
     startDate,
     endDate,
-    discount: '598'
+    dayCount,
+    read,
+    price,
+    deposit,
+    status,
+    indexData:[]
+    // currentTime
+
+
   },
 
   /**
@@ -27,26 +43,46 @@ Page({
   onLoad: function (options) {
     // 放入接口请求的   后面我看看
 
-    roomPrice = options.price;
-    hotelName = options.hotelName;
-    roomName = options.roomName;
+    const indexData = JSON.parse(options.indexData)
+
+    console.log(indexData)
+    // roomPrice = options.price;
+    // hotelName = options.hotelName;
+    // roomName = options.roomName;
+
+
+
+    // name = options.name;
     startDate = options.startDate;
     endDate = options.endDate;
+    dayCount = options.dayCount;
+    // read = options.read;
+    // price = options.price;
+    // deposit = options.deposit;
+    // status = options.status
+    sum=parseInt(indexData.deposit)+parseInt(indexData.price)
 
     this.setData({
-      roomPrice: roomPrice,
-      hotelName: hotelName,
-      roomName: roomName,
+      indexData:indexData,
+      // name: name,
       startDate: startDate,
       endDate: endDate,
-  
+      dayCount: dayCount,
+      sum:sum,
+    
+      
+      // read: read,
+      // price: price,
+      // deposit: deposit,
+      // status: "待确认"
+
 
     });
   },
- handleItem(e){
+  handleItem(e) {
     wx.navigateTo({
       url: '../hotelDetail/index',
-      
+
     })
   },
 

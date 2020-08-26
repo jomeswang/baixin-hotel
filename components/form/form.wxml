@@ -1,7 +1,8 @@
+
 <form bindsubmit="formSubmit" >
 	<view class="cu-form-group margin-top">
-		<view name="order_room_num" class="title">房间数</view>
-		<input placeholder="请输入数字"></input>
+		<view  class="title">房间数</view>
+		<input name="order_room_num" placeholder="请输入数字"></input>
 	</view>
 
 	<view class="cu-form-group margin-top">
@@ -30,17 +31,7 @@
 			</view>
 		</picker>
 	</view>
-	<!-- <view class="cu-form-group">
-		<view class="title">日期选择</view>
-		<picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
-			<view class="picker">
-				{{date}}
-			</view>
-		</picker>
-	</view> -->
-	<!-- 时间头 -->
 
-<!-- 时间尾 -->
 	<view class="cu-bar bg-white margin-top">
 		<view class="action" >
 		请上传身份证正反面照片
