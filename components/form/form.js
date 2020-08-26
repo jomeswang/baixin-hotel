@@ -11,6 +11,10 @@ Page({
     textareaAValue: '',
     textareaBValue: ''
   },
+    // 订单提交
+    formSubmit: function (e) {
+      console.log('form发生了submit事件，携带数据为：', e)
+    },
   PickerChange(e) {
     console.log(e);
     this.setData({
@@ -99,7 +103,24 @@ Page({
     this.setData({
       textareaBValue: e.detail.value
     })
-  }
+  },
+    // 订单提交
+    formSubmit: function (e) {
+      console.log('form发生了submit事件，携带数据为：', e.detail.value)
+      wx.request({
+        url: 'http://159.138.27.178:3000/api/order/new',
+        method:"POST",
+        data:{test:e.detail.value},
+        success:function(e){
+          console.log("success"),
+          wx.showToast({
+            title: '成功',
+          })
+
+        }
+
+      })
+    },
   // 以上都是UI自带的样式代码
-  
+
 })

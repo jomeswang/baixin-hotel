@@ -1,10 +1,48 @@
 //app.js
+wx.cloud.init()
 App({
   onLaunch: function () {
     // 展示本地存储能力
+    const that = this;
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+
+
+    // 通过云函数获取用户的openid
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        that.globalData.openid = res.result.openid;
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
+      }
+    })
+
+
+    // 退款函数
+    // wx.cloud.callFunction({
+    //   name: 'refund',
+    //   data: {
+    //     id,
+    //     total_fee,
+    //     refund_fee,
+    //   },
+    //   success: res => {
+    //     console.log(res)
+    //   },
+    //   fail: rej => {
+    //     console.log(rej)
+    //   }
+    // })
+
+
+
+
+
+
 
     // 登录
     wx.login({

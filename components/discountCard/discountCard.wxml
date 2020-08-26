@@ -19,7 +19,7 @@
 			<view class="right">
 				<view class="discount">
 					<view class="type">{{item.disType=='money'?'¥':'折'}}</view>
-					<view class="num">{{item.number}}</view>
+					<view class="num">{{item.disType=='money'?item.number:item.number/10}}</view>
 				</view>
 				<view class="condition">{{item.condition?'消费满'+item.condition+'可用':'无门槛'}}</view>
 				<view  wx:if='{{!isUse}}' class="button" data-id="{{index}}" data-type="{{item.cardType}}" bindtap="handleButton">立即使用</view>

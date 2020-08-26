@@ -25,50 +25,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getDiscountCard();
-    // let id = ''
-    wx.request({
-      url: 'http://159.138.27.178:3000/api/event/?openId=12&status=' + '',
-      method: 'GET',
-      success: res => {
-        console.log(res);
-      },
-      fail: rej => {
-        console.log(rej);
-
-      }
-    })
-
-    // wx.request({
-    //   url: 'http://159.138.27.178:3000/api/event/fix',
-    //   method: 'POST',
-    //   data: JSON.stringify({
-    //     _id: 'd644cf8b5f3aa30800042f8b03baa79c',
-    //     status: 'done'
-    //   }),
-    //   success: res => {
-    //     console.log(res);
-
-    //   }
-
-    // })
-
-    // wx.request({
-    //   url: 'http://159.138.27.178:3000/api/orderForm/new',
-    //   method: 'POST',
-    //   data: JSON.stringify({
-    //     test:123,
-    //     abc:234
-    //   })
-    // })
-
-    wx.request({
-      url: 'http://159.138.27.178:3000/api/orderForm?openid=123',
-      method: 'GET',
-      success: res => {
-        console.log(res);
-      }
-    })
   },
 
   /**
@@ -82,10 +38,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (app.cardChange) { //若优惠券变化了
-      this.getDiscountCard()
-      app.cardChange = false
-    }
+    // if (app.cardChange) { //若优惠券变化了
+    //   this.getDiscountCard()
+    //   app.cardChange = false
+    // }
+    console.log(app.globalData.openid);
+
+    this.getDiscountCard();
   },
 
   /**
@@ -129,67 +88,107 @@ Page({
   },
 
 
-  async getDiscountCard() {
+  getDiscountCard() {
     let res = '';
     const eatCardArr = [];
     const roomCardArr = [];
     const chessCardArr = [];
-    res = await db.collection('coupon').where({
-      user: ""
-    }).get()
+    // res = await db.collection('coupon').where({
+    //   user: ""
+    // }).get()
 
-    res.data.forEach((item, index) => {
-      const canUse = !this.isOverdue(item.endDate)
-      // canUse ? '' : continue
-      if (canUse) { //若不过期
-        const startMonth = item.startDate.split('-')[1];
-        const startDay = item.startDate.split('-')[2];
-        const endMonth = item.endDate.split('-')[1];
-        const endDay = item.endDate.split('-')[2];
-        const startHour = item.startTime.split(':')[0];
-        const startSecond = item.startTime.split(':')[1];
-        const endHour = item.endTime.split(':')[0];
-        const endSecond = item.endTime.split(':')[1];
+    wx.request({
+      // url: 'http://159.138.27.178:3000/api/event/?openid=123&status=' + '',
+      url: 'http://159.138.27.178:3000/api/event/?openid=' + app.globalData.openid + '&status=' + '',
+      method: 'GET',
+      success: res => {
+        res.data.forEach((item, index) => {
+          const canUse = !this.isOverdue(item.endDate)
+          // canUse ? '' : continue
+          console.log(item, 'item');
+          item = JSON.parse(item)
+          if (canUse) { //若不过期
+            let flag = true
+            const startMonth = item.startDate.split('-')[1];
+            const startDay = item.startDate.split('-')[2];
+            const endMonth = item.endDate.split('-')[1];
+            const endDay = item.endDate.split('-')[2];
+            const startHour = item.startTime.split(':')[0];
+            const startSecond = item.startTime.split(':')[1];
+            const endHour = item.endTime.split(':')[0];
+            const endSecond = item.endTime.split(':')[1];
 
-        const obj = {
-          _id: item._id,
-          cardType: item.type,
-          title: item.title,
-          startMonth,
-          startDay,
-          endMonth,
-          endDay,
-          startHour,
-          startSecond,
-          endHour,
-          endSecond,
-          number: item.message.num,
-          disType: item.message.type,
-          condition: item.message.condition,
-          isInTime: this.isInTime(item.startTime, item.endTime),
-          times: item.times
-        }
-        switch (item.type) {
-          case '餐饮券':
-            eatCardArr.push(obj);
-            break;
-          case '客房券':
-            roomCardArr.push(obj);
-            break;
-          case '棋牌券':
-            chessCardArr.push(obj);
-            break;
+            const obj = {
+              type: item.type,
+              user:item.user,
+              _id: item._id,
+              id: item.id,
+              cardType: item.type,
+              title: item.title,
+              startMonth,
+              startDay,
+              endMonth,
+              endDay,
+              startHour,
+              startSecond,
+              endHour,
+              endSecond,
+              number: item.message.num,
+              disType: item.message.type,
+              condition: item.message.condition,
+              isInTime: this.isInTime(item.startTime, item.endTime),
+              times: 1
+            }
+            switch (item.type) {
+              case '餐饮券':
+                eatCardArr.some((item, index) => {
+                  if (obj.id === item.id && obj.startDay === item.startDay) {
+                    item.times++
+                    flag = false
+                    return true
+                  }
+                })
+                flag ? eatCardArr.push(obj) : '';
+                break;
+              case '客房券':
+                roomCardArr.some((item, index) => {
+                  if (obj.id === item.id && obj.startDay === item.startDay) {
+                    item.times++
+                    flag = false
+                    return true
+                  }
+                })
+                flag ? roomCardArr.push(obj) : '';
+                break;
+              case '棋牌券':
+                chessCardArr.some((item, index) => {
+                  if (obj.id === item.id && obj.startDay === item.startDay) {
+                    item.times++
+                    flag = false
+                    return true
+                  }
+                })
+                flag ? chessCardArr.push(obj) : '';
+                break;
 
-        }
-        this.setData({
-          eatCardArr,
-          roomCardArr,
-          chessCardArr
+            }
+            this.setData({
+              eatCardArr,
+              roomCardArr,
+              chessCardArr
+            })
+          }
         })
+      },
+      fail: rej => {
+        console.log(rej);
+
       }
-
-
     })
+
+
+
+
   },
 
   /**

@@ -1,42 +1,17 @@
-<view class="card">
-  <view class="top">
-    <view class="left">豪华大床房
-    </view>
-    <view class="right">豪华大床房
-    </view>
-  </view>
-  <view class="bottom">
-    <view class="left">豪华大床房
-    </view>
-    <view class="right">豪华大床房
-    </view>
-  </view>
-</view>
+<text wx:if="{{cardArr.length==0}}" bindtap="enterIndex" class="text">暂无历史订单哦\n前往【首页】预定房间吧</text>
 
-<view class="card">
+
+<view wx:for="{{cardArr}}" wx:key="_id" class="card">
   <view class="top">
-    <view class="left">豪华大床房
+    <view class="left">{{item.title}}
     </view>
-    <view class="right">豪华大床房
+    <view class="right">{{item.price}}
     </view>
   </view>
   <view class="bottom">
-    <view class="left">豪华大床房
+    <view class="left">{{item.startTime}} 一 {{item.endTime}}/{{item.night}}晚/{{item.num}}间
     </view>
-    <view class="right">豪华大床房
-    </view>
-  </view>
-</view><view class="card">
-  <view class="top">
-    <view class="left">豪华大床房
-    </view>
-    <view class="right">豪华大床房
-    </view>
-  </view>
-  <view class="bottom">
-    <view class="left">豪华大床房
-    </view>
-    <view class="right">豪华大床房
+    <view class="right">{{item.status}}
     </view>
   </view>
 </view>

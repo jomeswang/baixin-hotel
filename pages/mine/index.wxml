@@ -10,7 +10,7 @@
     <open-data type="userNickName" class="user-name"></open-data>
     <!-- <view class="user-name">点击头像登录</view> -->
     <view class="detail">
-      <view class="nav">
+      <view class="nav" bindtap="navigate">
         <image src="../../res/images/ic_nav.png"></image> <text>一键导航</text>
       </view>
       <view class="line">|</view>

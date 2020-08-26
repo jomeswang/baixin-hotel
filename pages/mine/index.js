@@ -62,8 +62,24 @@ Page({
    */
   callPhone() {
     wx.makePhoneCall({
-      phoneNumber: '15816542132',
+      phoneNumber: '‭075586298588‬',
     })
+  },
+  /**
+   * 导航
+   */
+  navigate() {
+    let plugin = requirePlugin('routePlan');
+    let key = '4AQBZ-CY5CF-XDTJ7-NBQDG-7T6LJ-QCF2A'; //使用在腾讯位置服务申请的key
+    let referer = '百姓渔村'; //调用插件的小程序的名称
+    let endPoint = JSON.stringify({ //终点
+      'name': '百姓渔村',
+      'latitude': 39.894806,
+      'longitude': 116.321592
+    });
+    wx.navigateTo({
+      url: 'plugin://routePlan/route-plan?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+    });
   }
 
 })

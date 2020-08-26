@@ -4,6 +4,15 @@ page {
   color: #484343;
 }
 
+.text {
+  padding-top: 48rpx;
+  display: block;
+  margin: 404rpx auto;
+  width: 580rpx;
+  text-align: center;
+  font-size: 36rpx;
+}
+
 .card {
   margin: 40rpx auto;
   box-sizing: border-box;

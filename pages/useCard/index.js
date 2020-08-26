@@ -102,27 +102,31 @@ Page({
     if (money > condition) {
       const card = this.data.cardArr[0];
       this.billNo = this.productBillNo(30);
+      console.log(that.billNo, 'billno');
+
       wx.cloud.callFunction({
         name: 'wepay',
         data: {
           "body": card.title,
-          "outTradeNo": this.billNo,
+          "outTradeNo": that.billNo,
           "spbillCreateIp": "127.0.0.1",
           "subMchId": "1535262541",
           "totalFee": this.data.actPay * 100, //因为单位为分
           "envId": "test-yb8a7",
+          "totalFee": 1,
           "functionName": "pay_cb",
         },
         success: res => {
           const payment = res.result.payment
+
           wx.requestPayment({
             ...payment,
             success(res) {
               console.log('pay success', res)
               that.pushbill() //推送账单
-              that.removeDisCard(card._id, card.times) //删除该优惠券
+              that.removeDisCard(card._id) //删除该优惠券
               wx.redirectTo({
-                url: '../showPay/index?money='+that.data.money,
+                url: '../showPay/index?money=' + that.data.money,
               })
             },
             fail(err) {
@@ -153,18 +157,38 @@ Page({
    */
   pushbill() {
     const card = this.data.cardArr[0]
-    db.collection('orderForm').add({
+    wx.request({
+      url: 'http://159.138.27.178:3000/api/orderForm/new',
+      method: 'POST',
       data: {
-        openid: '',
-        id: this.productBillNo(30),
+        openid: app.globalData.openid,
+        id: this.billNo,
         disType: card.disType,
         disName: card.title,
         oriPay: this.data.money,
         disNum: card.number,
         actPay: this.data.actPay,
         time: Date.now(),
+        couponType: card.type,
+        user: card.user,
       }
     })
+
+    // const card = this.data.cardArr[0]
+    // db.collection('orderForm').add({
+    //   data: {
+    //     openid: '',
+    //     id: this.productBillNo(30),
+    //     disType: card.disType,
+    //     disName: card.title,
+    //     oriPay: this.data.money,
+    //     disNum: card.number,
+    //     actPay: this.data.actPay,
+    //     time: Date.now(),
+    //     couponType: card.type,
+    //     user: '',
+    //   }
+    // })
   },
 
   /**
@@ -182,21 +206,19 @@ Page({
   /**
    * 删除优惠券
    * @param {string} id 
-   * @param {number} times 
    */
-  async removeDisCard(id, times) {
-    console.log(id);
-    let res = ''
-
-    if (times === 1) {
-      // res = await db.collection('coupon').doc(id).remove()
-    } else {
-      // res = await db.collection('coupon').doc(id).update({
-      // times: --times
-      // })
-    }
-    console.log(res, 123)
-    app.cardChange = true
+  async removeDisCard(id) {
+    wx.request({
+      url: 'http://159.138.27.178:3000/api/event/fix',
+      method: 'POST',
+      data: JSON.stringify({
+        _id: app.globalData.openid,
+        status: 'done'
+      }),
+      success: res => {
+        console.log(res);
+      }
+    })
 
   },
 
