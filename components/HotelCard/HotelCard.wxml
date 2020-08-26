@@ -1,17 +1,17 @@
 <template name="roomListItem">
-  <view class='roomListItem' bindtap='hotelItemTap'>
+  <view class='roomListItem' bindtap='hotelItemTap' data-id="{{index}}">
     <image class='image' mode='scaleToFill' src='{{imageUrl}}'></image>
     <view class='content'>
       <text class='roomName'>{{roomName}}</text>
       <text class='roomService'>{{services}}</text>
-       <text class='roomService' style="font-size:10px">{{eating}} 当天1800前可以免费取消</text>
+      <text class='roomService' style="font-size:10px">{{eating}}  当天18:00前可以免费取消</text>
       <!-- 一行 -->
       <view class='priceItem'>
         <image src="../../res/iconfont/券.png" style="width:20px;height:20px; vertical-align:middle"></image>
-        <text class='price' >订就送7张优惠券</text>
+        <text class='price'>订就送7张优惠券</text>
         <text class='priceTip'></text>
       </view>
-      <view class='priceItem' >
+      <view class='priceItem'>
         <text class='price'>¥</text>
         <text class='price' style="font-size:34rpx">{{price}}</text>
         <text class='priceTip'>起</text>
@@ -22,29 +22,27 @@
     </view>
   </view>
 </template>
-
 <!-- 样式搞出来 -->
-
 <template name="roomEmpty">
   <view class='roomEmpty' bindtap='hotelItemTap'>
     <image class='image' mode='scaleToFill' src='{{imageUrl}}'></image>
     <view class='content'>
       <text class='roomName'>{{roomName}}</text>
       <text class='roomService'>{{services}}</text>
-       <text class='roomService' style="font-size:10px">{{eating}} 当天1800前可以免费取消</text>
+      <text class='roomService' style="font-size:10px">{{eating}} 当天1800前可以免费取消</text>
       <!-- 一行 -->
       <view class='priceItem'>
         <image src="../../res/iconfont/券.png" style="width:20px;height:20px; vertical-align:middle"></image>
-        <text class='price' >订就送7张优惠券</text>
+        <text class='price'>订就送7张优惠券</text>
         <text class='priceTip'></text>
       </view>
-      <view class='priceItem' >
+      <view class='priceItem'>
         <text class='price'>¥</text>
         <text class='price' style="font-size:34rpx">{{price}}</text>
         <text class='priceTip'>起</text>
       </view>
     </view>
-    <view class='bookBtn' hover-class='bookBtnHover' catchtap="handleItem" data-index='{{index}}' style="background:rgba(0,0,0,0.22);">
+    <view class='bookBtn' hover-class='bookBtnHover' catchtap="disableItem" data-index='{{index}}' style="background:rgba(0,0,0,0.22);">
       预订
     </view>
   </view>

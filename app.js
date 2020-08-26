@@ -3,8 +3,14 @@ App({
   data:{
     isConnect:null
   },
+  
+  
+
   onLaunch: function () {
     // 展示本地存储能力
+    console.log(111)
+    this.testWss()
+    
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
@@ -48,47 +54,65 @@ App({
   globalData: {
     userInfo: null
   },
-  startClick(even) {
+  // startClick(even) {
+  //   wx.connectSocket({
+  //     url: 'ws://159.138.27.178:9999',
+  //     method: 'GET',
+  //     success: (res) => {
+  //       isConnect: true
+  //       console.log("连接成功", res)
+  //     },
+  //     fail: (res) => {
+  //       isConnect: false
+  //       console.log("连接失败", res)
+  //     }
+  //   });
+
+  //   wx.onSocketOpen((res) => {
+  //     console.log('WebSocket连接已打开！')
+  //   });
+
+  //   wx.onSocketError((res) => {
+  //     console.log('WebSocket连接打开失败，请检查！')
+  //   })
+  // },
+
+  // sendClick: function (even) {
+  //   wx.sendSocketMessage({
+  //     data: "From微信小程序 web socket"
+  //   })
+  // },
+
+  // closeClick(even) {
+  //   wx.closeSocket({
+  //     success: (res) => {
+  //       console.log("关闭成功...")
+  //     },
+  //     fail: (res) => {
+  //       console.log("关闭失败...")
+  //     }
+  //   });
+  //   wx.onSocketClose((res)=>  {
+  //     console.log("WebSocket连接已关闭")
+  //   })
+  // },
+  // 立旺的socket
+
+  testWss(){
     wx.connectSocket({
-      url: 'ws://159.138.27.178:9999',
-      method: 'GET',
-      success: (res) => {
-        isConnect: true
-        console.log("连接成功", res)
-      },
-      fail: (res) => {
-        isConnect: false
-        console.log("连接失败", res)
-      }
-    });
-
-    wx.onSocketOpen((res) => {
+      url: 'ws://159.138.27.178:9998'
+    })
+    wx.onSocketOpen(function (res) {
       console.log('WebSocket连接已打开！')
-    });
-
-    wx.onSocketError((res) => {
-      console.log('WebSocket连接打开失败，请检查！')
     })
-  },
-
-  sendClick: function (even) {
-    wx.sendSocketMessage({
-      data: "From微信小程序 web socket"
+    wx.onSocketOpen(function (res) {
+      wx.sendSocketMessage({
+        data: "weapp message"
+      })
     })
-  },
-
-  closeClick(even) {
-    wx.closeSocket({
-      success: (res) => {
-        console.log("关闭成功...")
-      },
-      fail: (res) => {
-        console.log("关闭失败...")
-      }
-    });
-    wx.onSocketClose((res)=>  {
-      console.log("WebSocket连接已关闭")
+    wx.onSocketMessage(function (res) {
+      console.log('小程序收到服务器消息：' + res.data)
     })
-  },
+  }
 
 })

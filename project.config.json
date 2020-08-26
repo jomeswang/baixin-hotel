@@ -80,9 +80,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "优惠券历史",
-					"pathName": "pages/hotel/bookHistory/index",
+					"id": 2,
+					"name": "前端test",
+					"pathName": "pages/hotel/test/test",
 					"query": "",
 					"scene": null
 				}

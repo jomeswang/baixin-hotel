@@ -5,8 +5,8 @@
     "pages/mine/index",
     "pages/logs/logs",
     "pages/hotel/hotelDetail/index",
-    "pages/hotel/bookHotel/index"
- 
+    "pages/hotel/bookHotel/index",
+    "pages/hotel/test/test"
 
 
   ],

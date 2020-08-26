@@ -1,5 +1,6 @@
 const app = getApp();
-
+var util=require("../../utils/util.js")
+var DATE=util.formatTime(new Date())
 Component({
   properties:{
     startDate: {
@@ -10,7 +11,11 @@ Component({
     },
     dayCount:{
       type:String
+    },
+    indexData:{
+      type:Object
     }
+
   },
   data: {
     StatusBar: app.globalData.StatusBar,
@@ -144,31 +149,53 @@ Component({
         this.setData({
           formList:e.detail.value
         })
-        console.log('form发生了submit事件，携带数据为：', this.data.formList)
+        console.log('form发生了submit事件，携带数据为：', this.data.formList),
+        
         wx.request({
-          url: 'http://159.138.27.178:3000/api/order/new',
-          method:"POST",
-          data:{form:e.detail.value,
-            id:"2",
-            pic_List:this.data.pic_List,
-            // 父页面传过来的的东西
-            last_time:"一晚上",
-            order_begin_time:this.data.startDate,
-            order_end_time:this.data.endDate,
-            order_room_type:"标准单人间",
-            price:"价格",
-            deposit:"押金",
-            // 需要进行判断的时间
-            status:"成功",
-            reachTime:this.data.time,  
+          url: 'http://159.138.27.178:3000/api/order',
+          method:"GET",
+          data:{
           },
-          success:function(e){
-            console.log("success"),
-            console.log(e)
-            wx.showToast({
-              title: '成功',
+          success:(res)=>{
+            var max=0;
+            console.log(res)
+            res.data.forEach(item=>{
+             
+              if(max-JSON.parse(item).counters<0){
+                max=JSON.parse(item).counters
+              }
+
             })
-  
+            wx.request({
+              url: 'http://159.138.27.178:3000/api/order/new',
+              method:"POST",
+              data:{form:e.detail.value,
+                counters:max+1,
+                id:"2",
+                pic_List:this.data.pic_List,
+                // 父页面传过来的的东西
+                last_time:this.data.dayCount,
+                order_begin_time:this.data.startDate,
+                order_end_time:this.data.endDate,
+                order_room_type:this.data.indexData.name,
+                price:this.data.indexData.price,
+                deposit:this.data.indexData.deposit,
+                // 需要进行判断的时间
+                status:"待确认",
+                reachTime:this.data.time,  
+                currentTime:DATE
+              },
+              success:function(e){
+                // console.log(openid)
+                console.log("success"),
+                console.log(e)
+                wx.showToast({
+                  title: '成功',
+                })
+      
+              }
+      
+            })
           }
   
         })
