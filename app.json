@@ -38,7 +38,7 @@
       }, {
         "pagePath": "pages/mine/index",
         "text": "我的",
-        "iconPath": "res/iconfont/mine (1).png",
+        "iconPath": "res/iconfont/mine(1).png",
         "selectedIconPath": "res/iconfont/mine.png"
 
       }

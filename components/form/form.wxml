@@ -59,7 +59,7 @@
 	<view class='payItem'>
   <view class='priceItem'>
     <text>应付：</text>
-    <text>¥{{roomPrice}}</text>
+    <text>¥{{sum}}</text>
     <text wx:if='{{isDiscount}}' class='payMsg'>(已优惠{{discount}}元)</text>
   </view>
   <button class='payBtn'  formType="submit">立即支付</button>

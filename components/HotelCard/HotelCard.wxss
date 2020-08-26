@@ -71,11 +71,20 @@
   color: white;
   font-size: 26rpx;
   padding: 8rpx 32rpx;
-}
-
-.bookBtn {
   background: #fe7e38;
 }
+.unbookBtn{
+  position: absolute;
+  right: 16rpx;
+  bottom: 16rpx;
+  border-radius: 8rpx;
+  color: white;
+  font-size: 26rpx;
+  padding: 8rpx 32rpx;
+  background:rgba(0,0,0,0.22);
+}
+
+
 
 .bookBtnHover {
   background: #e55509;
