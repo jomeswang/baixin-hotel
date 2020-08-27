@@ -25,7 +25,7 @@
 			<text class="specification">{{indexData.read}}</text>
 		</view>
 		<!-- 详细订单 -->
-		<formList startDate="{{startDate}}" endDate="{{endDate}}" dayCount="{{dayCount}}" indexData="{{indexData}}"></formList>
+		<formList startDate="{{startDate}}" endDate="{{endDate}}" dayCount="{{dayCount}}" indexData="{{indexData}}" sum="{{sum}}"></formList>
 		<!-- 价格首 -->
 		<view class="cu-form-group margin-top">
 			<view class="title">房型费用</view>

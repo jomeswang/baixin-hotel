@@ -104,6 +104,8 @@ Page({
     roomNum: "",
     roomArr: [],
     showArr: [],
+    // 用于判定的房间数量
+    indexdata:[],
 
     roomArray: [{
       image: '../../res/images/ic_hotel_image.png',
@@ -309,14 +311,21 @@ Page({
   // 订房的跳转
   handleItem(e) {
     const index = e.currentTarget.dataset.id
-    console.log(
-      this.data.roomArr[index]);
-    console.log();
-
+    console.log(this.data.roomArr[index]);
+    this.setData({
+      indexdata:this.data.roomArr[index]
+    })
+    if(this.data.roomArr[index].roomNum<=0){
+      wx.showToast({
+        title: '没房咯，亲~',
+      })
+    }
+    
+    if(this.data.roomArr[index].roomNum>0){
     wx.navigateTo({
       // url: '../../pages/hotel/bookHotel/index?startDate=' + this.data.startDate + "&endDate=" + this.data.endDate + "&dayCount=" + this.data.dayCount + "&name=" + this.data.name + "&read=" + this.data.read + "&price=" + this.data.price + "&deposit=" + this.data.deposit + "&status" + this.data.status,
       url: '../../pages/hotel/bookHotel/index?indexData=' + JSON.stringify(this.data.roomArr[index]) + "&startDate=" + this.data.startDate + "&endDate=" + this.data.endDate + "&dayCount=" + this.data.dayCount
-    })
+    })}
   },
   
   //点击我显示底部弹出框
