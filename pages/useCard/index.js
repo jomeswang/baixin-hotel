@@ -160,6 +160,9 @@ Page({
     wx.request({
       url: 'http://159.138.27.178:3000/api/orderForm/new',
       method: 'POST',
+      header:{
+        "x-access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
+      },
       data: {
         openid: app.globalData.openid,
         id: this.billNo,
@@ -211,6 +214,9 @@ Page({
     wx.request({
       url: 'http://159.138.27.178:3000/api/event/fix',
       method: 'POST',
+      header:{
+        "x-access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
+      },
       data: JSON.stringify({
         _id: app.globalData.openid,
         status: '已使用'
