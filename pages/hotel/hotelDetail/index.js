@@ -26,8 +26,8 @@ Page({
       name: 'refund',
       data: {
         id: this.data.data.outTradeNo,
-        total_fee: parseInt(this.data.data.price) + parseInt(this.data.data.deposit),
-        refund_fee: parseInt(this.data.data.price) + parseInt(this.data.data.deposit),
+        total_fee: parseInt(this.data.data.price),
+        refund_fee: parseInt(this.data.data.price),
       },
       success: res => {
         console.log(res)

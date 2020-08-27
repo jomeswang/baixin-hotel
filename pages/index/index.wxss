@@ -402,7 +402,7 @@ Page {
 }
 
 .likesActive {
-  color: red;
+  color: black;
   flex:1;
   display:flex;
   justify-content: center;
@@ -411,7 +411,7 @@ Page {
 }
 
 .likesActive::after {
-  content:"👍点赞";
+  content:"👍 点赞";
 }
 
 /* .unlikeActive {

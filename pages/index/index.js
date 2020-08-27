@@ -179,6 +179,9 @@ Page({
 
   },
   likesItem: function (e) {
+    wx.showToast({
+      title: '感谢您的认可，亲~',
+    })
     // console.log(this.data.likes)
     // if (this.data.likes === 1) {
     //   this.setData({

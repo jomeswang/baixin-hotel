@@ -37,8 +37,8 @@ const requestwebsocket = {
           name: 'refund',
           data: {
             id: res.data.data.outTradeNo,
-            total_fee: parseInt(this.data.price) + parseInt(this.data.deposit),
-            refund_fee: parseInt(this.data.price) + parseInt(this.data.deposit),
+            total_fee: parseInt(this.data.price),
+            refund_fee: parseInt(this.data.price),
           },
           success: res => {
             console.log(res)

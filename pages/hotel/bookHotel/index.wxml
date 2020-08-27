@@ -20,7 +20,7 @@
 
 					<view style="padding-left:20rpx">订房必读</view>
 				</view>
-				<view style="color:red">查看全部</view>
+				<view style="color:red" bindtap="hotelItemTap">查看全部</view>
 			</view>
 			<text class="specification">{{indexData.read}}</text>
 		</view>
@@ -32,9 +32,9 @@
 			<view>{{indexData.price}}</view>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">押金</view>
+			<view class="title">天数</view>
 
-			<view>{{indexData.deposit}}</view>
+			<view>{{dayCount}}</view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">合计</view>
