@@ -11,11 +11,11 @@
     <!-- <view class="user-name">点击头像登录</view> -->
     <view class="detail">
       <view class="nav" bindtap="navigate">
-        <image src="../../res/images/ic_nav.png"></image> <text>一键导航</text>
+        <image  style="margin-right:10rpx" src="../../res/images/ic_nav.png"></image> <text> 一键导航</text>
       </view>
       <view class="line">|</view>
       <view class="tel" bindtap="callPhone">
-        <image src="../../res/images/ic_nav.png"></image><text>联系电话</text>
+        <image style="margin-right:10rpx" src="../../res/iconfont/电话.png"></image><text> 联系电话</text>
       </view>
     </view>
   </view>

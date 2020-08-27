@@ -69,6 +69,7 @@ Page({
    * 导航
    */
   navigate() {
+    return
     let plugin = requirePlugin('routePlan');
     let key = '4AQBZ-CY5CF-XDTJ7-NBQDG-7T6LJ-QCF2A'; //使用在腾讯位置服务申请的key
     let referer = '百姓渔村'; //调用插件的小程序的名称

@@ -24,8 +24,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  },
+  onLoad: function (options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -98,8 +97,8 @@ Page({
     // }).get()
 
     wx.request({
-      // url: 'http://159.138.27.178:3000/api/event/?openid=123&status=' + '',
-      url: 'http://159.138.27.178:3000/api/event/?openid=' + app.globalData.openid + '&status=' + '',
+      // url: 'http://159.138.27.178:3000/api/event/?openid=123&status=可使用',
+      url: 'http://159.138.27.178:3000/api/event/?openid=' + app.globalData.openid + '&status=可使用',
       method: 'GET',
       success: res => {
         res.data.forEach((item, index) => {
@@ -120,7 +119,7 @@ Page({
 
             const obj = {
               type: item.type,
-              user:item.user,
+              user: item.user,
               _id: item._id,
               id: item.id,
               cardType: item.type,
@@ -214,6 +213,26 @@ Page({
   isOverdue(date) {
     const nowtime = new Date().getTime();
     const cardTime = new Date(date).getTime() + 24000 * 3600; //当天过了才过期
+
+    if (nowtime > cardTime) {
+      wx.request({
+        url: 'http://159.138.27.178:3000/api/event/fix',
+        method: 'POST',
+        data: JSON.stringify({
+          _id: app.globalData.openid,
+          status: '已过期'
+        }),
+        success: res => {
+          console.log(res);
+        }
+      })
+    }
+
+
+
+
+
+
     return nowtime > cardTime
   },
 

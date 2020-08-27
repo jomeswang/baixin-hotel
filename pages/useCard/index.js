@@ -213,7 +213,7 @@ Page({
       method: 'POST',
       data: JSON.stringify({
         _id: app.globalData.openid,
-        status: 'done'
+        status: '已使用'
       }),
       success: res => {
         console.log(res);

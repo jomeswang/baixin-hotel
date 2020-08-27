@@ -58,6 +58,14 @@ Page({
     minute = minute < 10 ? '0' + minute : minute
     return year + '-' + month + '-' + day + ' ' + hour + ':' + minute
   },
+  /**
+   * 跳转到优惠页
+   */
+  enterDiscount() {
+    wx.switchTab({
+      url: '../discount/index',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
