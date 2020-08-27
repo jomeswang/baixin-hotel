@@ -62,7 +62,7 @@ Component({
       this.setData(data);
     },
     TimeChange(e) {
-   
+
       this.setData({
         time: e.detail.value
       })
@@ -192,8 +192,8 @@ Component({
           "outTradeNo": billNo,
           "spbillCreateIp": "127.0.0.1",
           "subMchId": "1535262541",
-          // "totalFee": this.data.sum * 100, //因为单位为分
-          "totalFee": 11,
+          "totalFee": this.data.sum * 100, //因为单位为分
+          // "totalFee": 11,
           "envId": "test-yb8a7",
           "functionName": "pay_cb",
         },
@@ -209,8 +209,6 @@ Component({
               console.log('pay success', res)
 
 
-
-
               // 如果支付成功
               that.setData({
                 formList: e.detail.value
@@ -220,13 +218,13 @@ Component({
                 wx.request({
                   url: 'http://159.138.27.178:3000/api/order',
                   method: "GET",
-                  header:{
-                    "x-access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
+                  header: {
+                    "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
                   },
                   data: {},
                   success: (res) => {
                     var max = 0;
-                    console.log(res)
+                    console.log(res, 'res')
                     res.data.forEach(item => {
 
                       if (max - JSON.parse(item).counters < 0) {
@@ -241,8 +239,8 @@ Component({
                     wx.request({
                       url: 'http://159.138.27.178:3000/api/order/new',
                       method: "POST",
-                      header:{
-                        "x-access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
+                      header: {
+                        "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
                       },
                       data: {
                         form: e.detail.value,
@@ -254,7 +252,7 @@ Component({
                         order_begin_time: that.data.startDate,
                         order_end_time: that.data.endDate,
                         order_room_type: that.data.indexData.name,
-                        price: that.data.indexData.price,
+                        price: that.data.indexData.price * that.data.dayCount,
                         deposit: that.data.indexData.deposit,
                         openid: app.globalData.openid,
                         outTradeNo: billNo,
@@ -270,8 +268,14 @@ Component({
                         wx.showToast({
                           title: '成功',
                         })
+
+                        console.log(e.data);
+
+                        console.log(e.data.order);
+                        console.log(JSON.stringify(e.data.order));
+
                         wx.navigateTo({
-                          url: '../hotelDetail/index',
+                          url: '../hotelDetail/index?indexData=' + JSON.stringify(e.data.order),
                         })
 
 
@@ -288,6 +292,7 @@ Component({
 
 
 
+
             },
             fail(err) {
               console.log('pay fail', err)
@@ -296,6 +301,13 @@ Component({
         },
         fail: console.error,
       })
+
+
+
+
+
+
+
 
 
 

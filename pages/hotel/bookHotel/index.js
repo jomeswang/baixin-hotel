@@ -31,7 +31,7 @@ Page({
     price,
     deposit,
     status,
-    indexData:[]
+    indexData: []
     // currentTime
 
 
@@ -60,17 +60,17 @@ Page({
     // price = options.price;
     // deposit = options.deposit;
     // status = options.status
-    sum=parseInt(indexData.deposit)+parseInt(indexData.price)
+    sum = parseInt(indexData.deposit) + parseInt(indexData.price) * dayCount
 
     this.setData({
-      indexData:indexData,
+      indexData: indexData,
       // name: name,
       startDate: startDate,
       endDate: endDate,
       dayCount: dayCount,
-      sum:sum,
-    
-      
+      sum: sum,
+
+
       // read: read,
       // price: price,
       // deposit: deposit,

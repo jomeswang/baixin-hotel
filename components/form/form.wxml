@@ -1,9 +1,9 @@
 
 <form bindsubmit="formSubmit" >
-	<view class="cu-form-group margin-top">
+	<!-- <view class="cu-form-group margin-top">
 		<view  class="title">房间数</view>
 		<input name="order_room_num" placeholder="请输入数字"></input>
-	</view>
+	</view> -->
 
 	<view class="cu-form-group margin-top">
 		<view class="title">住客名字</view>

@@ -1,7 +1,7 @@
 <text wx:if="{{cardArr.length==0}}" bindtap="enterIndex" class="text">暂无历史订单哦\n前往【首页】预定房间吧</text>
 
 
-<view wx:for="{{cardArr}}" wx:key="_id" class="card">
+<view wx:for="{{cardArr}}" data-id="{{index}}" bindtap="lookOrder" wx:key="_id" class="card">
   <view class="top">
     <view class="left">{{item.title}}
     </view>
@@ -9,7 +9,9 @@
     </view>
   </view>
   <view class="bottom">
-    <view class="left">{{item.startTime}} 一 {{item.endTime}}/{{item.night}}晚/{{item.num}}间
+    <!-- <view class="left">{{item.startTime}} 一 {{item.endTime}}/{{item.night}}晚/{{item.num}}间
+    </view> -->
+    <view class="left">{{item.startTime}} 一 {{item.endTime}}/{{item.night}}晚
     </view>
     <view class="right">{{item.status}}
     </view>

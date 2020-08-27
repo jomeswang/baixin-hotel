@@ -15,29 +15,33 @@ Page({
   onLoad: function (options) {
     const that = this;
     const arr = [];
+    const dataArr = [];
     wx.request({
       url: 'http://159.138.27.178:3000/api/order?openid=' + app.globalData.openid,
       method: 'GET',
-      header:{
-        "x-access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
+      header: {
+        "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
       },
       success: res => {
+
         console.log(res.data, '看一下');
         res.data.forEach(item => {
           const ele = JSON.parse(item)
+          dataArr.push(ele)
           const obj = {
             price: ele.price,
             status: ele.status,
             startTime: ele.order_begin_time,
             endTime: ele.order_end_time,
             title: ele.order_room_type,
-            num: ele.form.order_room_num,
+            // num: ele.form.order_room_num,
             night: this.calNight(ele.order_begin_time, ele.order_end_time)
           }
           arr.push(obj)
         });
         this.setData({
-          cardArr: arr
+          cardArr: arr,
+          data: dataArr,
         })
       }
     })
@@ -63,7 +67,26 @@ Page({
     })
   },
 
+  /**
+   * 查看订单详情
+   */
+  lookOrder(e) {
+    console.log(e);
+    console.log(this.data);
+    console.log(e.currentTarget.dataset);
+    console.log(e.currentTarget.dataset);
+    console.log(this.data.data);
 
+
+    const data = JSON.stringify(this.data.data[e.currentTarget.dataset.id])
+    console.log(e.currentTarget.dataset);
+    console.log(data);
+
+    wx.navigateTo({
+      url: '../hotel/hotelDetail/index?indexData=' + data,
+    })
+
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

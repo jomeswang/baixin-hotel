@@ -2,63 +2,39 @@
 wx.cloud.init()
 const api = require("./utils/util.js");
 App({
-  data:{
-    isConnect:null
+  data: {
+    isConnect: null
   },
-  
-  
+
+
 
   onLaunch: function () {
     // 展示本地存储能力
     const that = this;
-    console.log(111)
-    api.api.testWss()
-    
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-
     // 通过云函数获取用户的openid
     wx.cloud.callFunction({
       name: 'login',
       data: {},
       success: res => {
         that.globalData.openid = res.result.openid;
+        api.api.testWss(res.result.openid)
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
       }
     })
+    console.log(111)
 
-
-    // 退款函数
-    // wx.cloud.callFunction({
-    //   name: 'refund',
-    //   data: {
-    //     id,
-    //     total_fee,
-    //     refund_fee,
-    //   },
-    //   success: res => {
-    //     console.log(res)
-    //   },
-    //   fail: rej => {
-    //     console.log(rej)
-    //   }
-    // })
-
-
-
-
-
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs)
 
 
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        
+
       }
 
     })
@@ -83,13 +59,13 @@ App({
       }
     })
   },
-  onShow(options){
+  onShow(options) {
     wx.onSocketMessage((res) => {
       console.log(res.data)
       console.log(res)
     })
   },
-  
+
   globalData: {
     userInfo: null
   },
@@ -137,29 +113,29 @@ App({
   // },
   // 立旺的socket
 
-  testWss(){
-        wx.connectSocket({
-          url: 'ws://159.138.27.178:9998'
-        })
-        wx.onSocketOpen(function (res) {
-          console.log('WebSocket连接已打开！')
-        })
-        wx.onSocketOpen(function (res) {
-          setInterval(()=>{
-            wx.sendSocketMessage({
-              data: "weapp message"
-            })
-          }, 20000)
-    
-        })
-        wx.onSocketMessage(function (res) {
-          console.log('小程序收到服务器消息：' + res.data)
-    //判断是否是小程序自己的订单  使用openid进行判断；
-        if(res.data["openid"]=="自己的id"){
-          //进行云支付  获取订单的微信支付的账单号1 进行  退款操作//
+  // testWss(){
+  //       wx.connectSocket({
+  //         url: 'ws://159.138.27.178:9998'
+  //       })
+  //       wx.onSocketOpen(function (res) {
+  //         console.log('WebSocket连接已打开！')
+  //       })
+  //       wx.onSocketOpen(function (res) {
+  //         setInterval(()=>{
+  //           wx.sendSocketMessage({
+  //             data: "weapp message"
+  //           })
+  //         }, 20000)
 
-        }
-        })
-      }
+  //       })
+  //       wx.onSocketMessage(function (res) {
+  //         console.log('小程序收到服务器消息：' + res.data)
+  //   //判断是否是小程序自己的订单  使用openid进行判断；
+  //       if(res.data["openid"]=="自己的id"){
+  //         //进行云支付  获取订单的微信支付的账单号1 进行  退款操作//
+
+  //       }
+  //       })
+  //     }
 
 })
