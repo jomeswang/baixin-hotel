@@ -54,7 +54,7 @@
         <text class="text2">一键导航</text>
       </view>
       <view style='color:#ccc;text-align: center;'>|</view>
-      <view class="filter">
+      <view class="filter" bindtap="callPhone">
         <image src="../../res/iconfont/电话.jpg" style="width:25px;height:25px"></image>
         <text class="text2">联系电话</text>
       </view>

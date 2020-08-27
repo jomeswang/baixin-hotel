@@ -107,31 +107,31 @@ Page({
     // 用于判定的房间数量
     indexdata:[],
 
-    roomArray: [{
-      image: '../../res/images/ic_hotel_image.png',
-      name: '标准单人间',
-      service: 'WiFi/有窗/空调',
-      eating: "早饭",
-      time: "当天18:00前可免费取消",
-      price: 158,
+    // roomArray: [{
+    //   image: '../../res/images/ic_hotel_image.png',
+    //   name: '标准单人间',
+    //   service: 'WiFi/有窗/空调',
+    //   eating: "早饭",
+    //   time: "当天18:00前可免费取消",
+    //   price: 158,
 
 
-    }, {
-      image: '../../res/images/ic_hotel_image.png',
-      name: '标准双人间',
-      service: 'WiFi/有窗/空调',
-      price: 258
-    }, {
-      image: '../../res/images/ic_hotel_image.png',
-      name: '豪华单人间',
-      service: 'WiFi/有窗/空调',
-      price: 198
-    }, {
-      image: '../../res/images/ic_hotel_image.png',
-      name: '豪华双人间',
-      service: 'WiFi/有窗/空调',
-      price: 358
-    }, ],
+    // }, {
+    //   image: '../../res/images/ic_hotel_image.png',
+    //   name: '标准双人间',
+    //   service: 'WiFi/有窗/空调',
+    //   price: 258
+    // }, {
+    //   image: '../../res/images/ic_hotel_image.png',
+    //   name: '豪华单人间',
+    //   service: 'WiFi/有窗/空调',
+    //   price: 198
+    // }, {
+    //   image: '../../res/images/ic_hotel_image.png',
+    //   name: '豪华双人间',
+    //   service: 'WiFi/有窗/空调',
+    //   price: 358
+    // }, ],
   },
   //事件处理函数
   bindViewTap: function () {
@@ -314,6 +314,12 @@ Page({
       dayCount: this.getDayCount(startDate, endDate)
     });
   },
+  // 电话号码
+  callPhone() {
+    wx.makePhoneCall({
+      phoneNumber: '‭075586298588‬',
+    })
+  },
   // 订房的跳转
   handleItem(e) {
     const index = e.currentTarget.dataset.id
@@ -326,6 +332,8 @@ Page({
         title: '没房咯，亲~',
       })
     }
+    
+    
     
     if(this.data.roomArr[index].roomNum>0){
     wx.navigateTo({

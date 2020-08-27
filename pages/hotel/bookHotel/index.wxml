@@ -20,7 +20,7 @@
 
 					<view style="padding-left:20rpx">订房必读</view>
 				</view>
-				<view style="color:red" bindtap="hotelItemTap">查看全部</view>
+				<view style="color:red" bindtap="showModal">查看全部</view>
 			</view>
 			<text class="specification">{{indexData.read}}</text>
 		</view>
@@ -45,3 +45,7 @@
 		<!-- 价格末 -->
 	</view>
 </scroll-view>
+<!-- 弹窗 -->
+
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<scroll-view scroll-y animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">{{indexData.read}}</scroll-view>

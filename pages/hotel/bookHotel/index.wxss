@@ -85,7 +85,7 @@ Page {
   display: -webkit-box;
   word-break: break-all;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4
+  -webkit-line-clamp: 2
 }
 .content-right{
   display: flex;
@@ -165,3 +165,34 @@ Page {
   position: absolute;
   right: 0;
 }
+/* 查看全部 */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+ }
+ 
+ .commodity_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+  height: 650rpx;
+ }
+
+ /* //弹出框 */
+ .commodity_attr_box{
+   padding: 40rpx;
+   font-size: 40rpx;
+ }
