@@ -1,5 +1,6 @@
 //app.js
 wx.cloud.init()
+const api = require("./utils/util.js");
 App({
   data:{
     isConnect:null
@@ -11,7 +12,7 @@ App({
     // 展示本地存储能力
     const that = this;
     console.log(111)
-    this.testWss()
+    api.api.testWss()
     
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -153,6 +154,11 @@ App({
         })
         wx.onSocketMessage(function (res) {
           console.log('小程序收到服务器消息：' + res.data)
+    //判断是否是小程序自己的订单  使用openid进行判断；
+        if(res.data["openid"]=="自己的id"){
+          //进行云支付  获取订单的微信支付的账单号1 进行  退款操作//
+
+        }
         })
       }
 
