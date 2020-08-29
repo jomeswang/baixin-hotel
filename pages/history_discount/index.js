@@ -18,7 +18,7 @@ Page({
     const arr = [];
     // const that = this;
     // wx.request({
-    //   url: 'http://159.138.27.178:3000/api/orderForm?openid=123',
+    //   url: 'http://baixingapi.jomeswang.top/api/orderForm?openid=123',
     //   method: 'GET',
     //   success: res => {
     //     console.log(res.data, '看一下');

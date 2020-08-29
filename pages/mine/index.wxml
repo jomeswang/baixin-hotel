@@ -15,7 +15,7 @@
       </view>
       <view class="line">|</view>
       <view class="tel" bindtap="callPhone">
-        <image style="margin-right:10rpx" src="../../res/iconfont/电话.png"></image><text> 联系电话</text>
+        <image style="margin-right:10rpx" src="../../res/iconfont/phone.png"></image><text> 联系电话</text>
       </view>
     </view>
   </view>

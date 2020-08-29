@@ -62,7 +62,7 @@ image {
   background-color: rgba(253, 125, 76, 0.15);
   border-radius: 8rpx;
   height: 44rpx;
-  width: 140rpx;
+  /* width: 140rpx; */
   padding: 12rpx 14rpx;
 
 }
