@@ -15,7 +15,7 @@ const requestwebsocket = {
     console.log('进来了', openid);
 
     wx.connectSocket({
-      url: 'ws://159.138.27.178:9998'
+      url: 'ws:baixingwsc2.jomeswang.top/'
     })
     wx.onSocketOpen(function (res) {
       console.log('WebSocket连接已打开！')

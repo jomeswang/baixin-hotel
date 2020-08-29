@@ -97,8 +97,8 @@ Page({
     // }).get()
 
     wx.request({
-      // url: 'http://159.138.27.178:3000/api/event/?openid=123&status=可使用',
-      url: 'http://159.138.27.178:3000/api/event/?openid=' + app.globalData.openid + '&status=可使用',
+      // url: 'http://baixingapi.jomeswang.top/api/event/?openid=123&status=可使用',
+      url: 'http://baixingapi.jomeswang.top/api/event/?openid=' + app.globalData.openid + '&status=可使用',
       header: {
         "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
       },
@@ -219,7 +219,7 @@ Page({
 
     if (nowtime > cardTime) {
       wx.request({
-        url: 'http://159.138.27.178:3000/api/event/fix',
+        url: 'http://baixingapi.jomeswang.top/api/event/fix',
         header: {
           "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
         },
