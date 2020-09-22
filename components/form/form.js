@@ -17,7 +17,7 @@ Component({
       type: Object
     },
     sum: {
-      type: String
+      type: Number
     }
 
   },
