@@ -49,7 +49,7 @@ const requestwebsocket = {
         })
 
         //进行云支付  获取订单的微信支付的账单号1 进行  退款操作//
-        //"数据格式是样子的返回的  你们需要的就进行退款  "{"_id":"6518b7395f46a0b400661cbe17967b88","counters":23,"currentTime":"2020/08/27 01:48:44","deposit":"100","form":{"order_name":"111","order_phone_number":"11","order_room_num":"11"},"id":"2","last_time":"1","openid":"oaFmY5GCGMCqfaAPRNOEqM3cHgZc","order_begin_time":"2020-8-27","order_end_time":"2020-8-28","order_room_type":"豪华大房","outTradeNo":"004148993049919259340776303834","pic_List":["http://159.138.27.178:8000/upload_be6dc75a0f3e8f4fb7156914acf9d805.png"],"price":"2000","reachTime":"12:01","status":"已取消"}""
+        //"数据格式是样子的返回的  你们需要的就进行退款  "{"_id":"6518b7395f46a0b400661cbe17967b88","counters":23,"currentTime":"2020/08/27 01:48:44","deposit":"100","form":{"order_name":"111","order_phone_number":"11","order_room_num":"11"},"id":"2","last_time":"1","openid":"oaFmY5GCGMCqfaAPRNOEqM3cHgZc","order_begin_time":"2020-8-27","order_end_time":"2020-8-28","order_room_type":"豪华大房","outTradeNo":"004148993049919259340776303834","pic_List":["https://159.138.27.178:8000/upload_be6dc75a0f3e8f4fb7156914acf9d805.png"],"price":"2000","reachTime":"12:01","status":"已取消"}""
       }
       //字段都有   金额大小  是price   openid你们在订单里面插入  不是数据的问题     
 

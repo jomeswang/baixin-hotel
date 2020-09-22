@@ -64,7 +64,7 @@ Page({
     // price = options.price;
     // deposit = options.deposit;
     // status = options.status
-    sum =parseInt(indexData.price) * dayCount
+    sum = Number(indexData.price) * dayCount
 
     this.setData({
       indexData: indexData,

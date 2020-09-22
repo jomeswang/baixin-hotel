@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 var app = getApp();
-var locationUrl = 'http://apis.map.qq.com/ws/geocoder/v1/';
+var locationUrl = 'https://apis.map.qq.com/ws/geocoder/v1/';
 const tencentMapKey = 'ZNDBZ-W3YR6-6KXSB-MLKXV-6HFXK-UMFOT';
 
 var currentYear = new Date().getFullYear();
@@ -151,12 +151,15 @@ Page({
 
     this.setSearchDate();
     wx.request({
-      url: 'http://baixingapi.jomeswang.top/api/room/',
+      url: 'https://ht1.jomeswang.top/api/room/',
+      
       method: "GET",
       header:{
         "x-access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
       },
       success: e => {
+        console.log(e,'e');
+        
         e.data.forEach((item, index) => {
 
           // console.log(JSON.parse(item))

@@ -32,7 +32,7 @@ Page({
       success: res => {
         console.log(res)
         wx.request({
-          url: 'http://baixingapi.jomeswang.top/api/order/update',
+          url: 'https://baixingapi.jomeswang.top/api/order/update',
           method: "POST",
           header: {
             "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"

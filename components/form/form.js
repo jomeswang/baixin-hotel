@@ -17,7 +17,7 @@ Component({
       type: Object
     },
     sum: {
-      type: String
+      type: Number
     }
 
   },
@@ -90,9 +90,9 @@ Component({
 
             filePath: tempFilepaths[0],
             name: 'file',
-            url: 'http://159.138.27.178:3000/api/order/pic',
+            url: 'https://159.138.27.178:3000/api/order/pic',
             success: res => {
-              const data = "http://159.138.27.178:8000/" + res.data.slice(4)
+              const data = "https://159.138.27.178:8000/" + res.data.slice(4)
               this.setData({
                 pic_List: this.data.pic_List.concat(data)
 
@@ -216,7 +216,7 @@ Component({
               console.log('form发生了submit事件，携带数据为：', that.data.formList),
                 // 计数器  类似 id
                 wx.request({
-                  url: 'http://159.138.27.178:3000/api/order',
+                  url: 'https://159.138.27.178:3000/api/order',
                   method: "GET",
                   header: {
                     "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
@@ -237,7 +237,7 @@ Component({
 
 
                     wx.request({
-                      url: 'http://159.138.27.178:3000/api/order/new',
+                      url: 'https://159.138.27.178:3000/api/order/new',
                       header: {
                         "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
                       },
