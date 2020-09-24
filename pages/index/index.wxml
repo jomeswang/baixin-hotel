@@ -48,7 +48,7 @@
       </view>
     </view>
     <!-- 一行 -->
-    <view class="location">
+    <!-- <view class="location">
       <view class="filter">
         <image src="../../res/iconfont/nav.png" style="width:24px;height:24px"></image>
         <text class="text2">一键导航</text>
@@ -57,6 +57,15 @@
       <view class="filter">
         <image src="../../res/iconfont/phone.jpg" style="width:25px;height:25px"></image>
         <text class="text2">联系电话</text>
+      </view>
+    </view> -->
+    <view class="detail">
+      <view class="nav" bindtap="navigate">
+        <image style="margin-right:10rpx" src="../../res/images/ic_nav.png"></image> <text> 一键导航</text>
+      </view>
+      <view class="line">|</view>
+      <view class="tel" bindtap="callPhone">
+        <image style="margin-right:10rpx" src="../../res/iconfont/phone.png"></image><text> 联系电话</text>
       </view>
     </view>
     <!-- 一行 -->
@@ -105,7 +114,8 @@
   </view>
 </view>
 <!-- 日期end -->
-<template is='roomListItem' wx:for='{{roomArr}}' data-id="{{index}}" data="{{imageUrl:item.imgUrl[0].url,roomName:item.name,services:item.convenience,price:item.price,eating:item.morningTea,time:item.time,index:index,bookTap:'bookRoom',roomArr:roomArr}}" />
+<template is='roomListItem' wx:for='{{roomArr}}' data-id="{{index}}"
+  data="{{imageUrl:item.imgUrl[0].url,roomName:item.name,services:item.convenience,price:item.price,eating:item.morningTea,time:item.time,index:index,bookTap:'bookRoom',roomArr:roomArr}}" />
 <!-- 11111111111 -->
 <template is='roomEmpty' wx:for='{{roomArray}}'
   data="{{imageUrl:item.image,roomName:item.name,services:item.service,price:item.price,index:index,bookTap:'bookRoom'}}" />
