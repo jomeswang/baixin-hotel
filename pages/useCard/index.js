@@ -158,7 +158,7 @@ Page({
   pushbill() {
     const card = this.data.cardArr[0]
     wx.request({
-      url: 'https://baixingapi.jomeswang.top/api/orderForm/new',
+      url: 'https://ht1.jomeswang.top/api/orderForm/new',
       method: 'POST',
       header:{
         "x-access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
@@ -212,7 +212,7 @@ Page({
    */
   async removeDisCard(id) {
     wx.request({
-      url: 'https://baixingapi.jomeswang.top/api/event/fix',
+      url: 'https://ht1.jomeswang.top/api/event/fix',
       method: 'POST',
       header:{
         "x-access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
