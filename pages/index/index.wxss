@@ -10,7 +10,10 @@ Page {
   height: 350rpx;
 
 }
-
+.iconImg{
+  width: 32rpx;
+  height: 32rpx;
+}
 .detail {
   display: flex;
   display: -webkit-flex;
@@ -28,7 +31,7 @@ Page {
   box-sizing: border-box;
   font-size: 20rpx;
   background-color: rgba(253, 125, 76, 0.15);
-  border-radius: 8rpx;
+  border-radius: 20rpx;
   height: 44rpx;
   /* width: 140rpx; */
   padding: 12rpx 14rpx;
@@ -45,7 +48,29 @@ image {
   width: 24rpx;
   height: 24rpx;
 }
-
+.likes_wrap{
+  flex: 1;
+  /* height: max-content; */
+  box-sizing: border-box;
+  padding: 2rpx 30rpx;
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  /* border-bottom: 1rpx solid white; */
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  color: red;
+  background-color: white;
+}
+.likes_wrap image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.likes_text{
+  font-weight: 550;
+  font-size: 35rpx;
+  padding: 10rpx;
+}
 
 .homeHeader .swiper {
   width: 100%;
@@ -130,10 +155,10 @@ image {
 #Text {
 
   font-size: 14px;
-
-  font-weight: 400;
+  color: #666;
+  font-weight: 500;
   line-height: 20px;
-  color: rgba(72, 67, 67, 1);
+
   opacity: 1;
 }
 
@@ -298,6 +323,7 @@ image {
   height: 128px;
   /* border-radius: 20rpx; */
   margin-right: 16rpx;
+ 
 }
 
 .roomListItem .content {
