@@ -15,7 +15,7 @@
 			</view>
 		</view>
 		<!-- 一行 -->
-		<view class="location">
+		<!-- <view class="location">
 			<view class="filter">
 				<image src="../../../res/iconfont/导航.png" style="width:24px;height:24px"></image>
 				<text class="text2">一键导航</text>
@@ -25,7 +25,16 @@
 				<image src="../../../res/iconfont/电话.jpg" style="width:24px;height:24px"></image>
 				<text class="text2" >联系电话</text>
 			</view>
-		</view>
+		</view> -->
+		<view class="detail">
+      <view class="nav" bindtap="navigate">
+        <image class="iconImg" style="margin-right:10rpx" src="../../../res/images/ic_nav.png"></image> <text style="color:#EB4A42;font-size:30rpx;font-weight: 600;"> 一键导航</text>
+      </view>
+      <view class="line" style="color: #EB4A42;">|</view>
+      <view class="tel" bindtap="callPhone">
+        <image class="iconImg" style="margin-right:10rpx" src="../../../res/iconfont/phone.png"></image><text style="color:#EB4A42;font-size:30rpx;font-weight: 600;"> 联系电话</text>
+      </view>
+    </view>
 		<!-- 一行 -->
 		<view class="location">
 			<view class="filter">
@@ -47,7 +56,7 @@
 	<view style='margin-top:10rpx;'></view>
 	<!-- 文末右边 -->
 	<view class="content-right">
-		<view wx:if="{{data.status=='待入住'}}" bindtap="cancelOrder" id="right-text"
+		<view wx:if="{{data.status=='待确认'}}" bindtap="cancelOrder" id="right-text"
 			style=" border:#666 5rpx solid;color:rgba(108,104,104,1)">取消订单</view>
 		<view id="right-text" bindtap="backToIndex">再次预订</view>
 	</view>

@@ -11,14 +11,13 @@ Page({
    * 取消订单
    */
   cancelOrder() {
-    console.log(this.data.data.price + this.data.data.deposit);
-    console.log(this.data);
-    const data = this.data.data;
-    data.status = '已取消';
-    data.own = 1;
-    this.setData({
-      data
+
+    wx.showLoading({
+      title: '退款中',
     })
+    console.log(Number(this.data.data.price));
+    console.log(Number(this.data.data.price), ';lllll');
+
 
     const that = this;
     // 退款函数
@@ -26,10 +25,22 @@ Page({
       name: 'refund',
       data: {
         id: this.data.data.outTradeNo,
-        total_fee: parseInt(this.data.data.price),
-        refund_fee: parseInt(this.data.data.price),
+        total_fee: Number(this.data.data.price)*100,
+        refund_fee: Number(this.data.data.price)*100,
       },
       success: res => {
+        wx.hideLoading()
+        wx.showToast({
+          title: '退款成功',
+        })
+        console.log(this.data.data.price + this.data.data.deposit);
+        console.log(this.data);
+        const data = this.data.data;
+        data.status = '已取消';
+        data.own = 1;
+        this.setData({
+          data
+        })
         console.log(res)
         wx.request({
           url: 'https://ht1.jomeswang.top/api/order/update',
@@ -41,6 +52,7 @@ Page({
         })
       },
       fail: rej => {
+        wx.hideLoading()
         console.log(rej)
       }
     })
@@ -109,17 +121,17 @@ Page({
   onReachBottom: function () {
 
   },
-    // 电话号码
-    callPhone() {
-      wx.makePhoneCall({
-        phoneNumber: '‭075586298588‬',
-      })
-    },
-    backToIndex(){
-      wx.switchTab({
-        url: '../../index/index',
-      })
-    },
+  // 电话号码
+  callPhone() {
+    wx.makePhoneCall({
+      phoneNumber: '‭075586298588‬',
+    })
+  },
+  backToIndex() {
+    wx.switchTab({
+      url: '../../index/index',
+    })
+  },
 
   /**
    * 用户点击右上角分享
@@ -130,41 +142,41 @@ Page({
   showModal: function () {
     // 显示遮罩层
     var animation = wx.createAnimation({
-     duration: 200,
-     timingFunction: "linear",
-     delay: 0
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
     })
     this.animation = animation
     animation.translateY(300).step()
     this.setData({
-     animationData: animation.export(),
-     showModalStatus: true
+      animationData: animation.export(),
+      showModalStatus: true
     })
     setTimeout(function () {
-     animation.translateY(0).step()
-     this.setData({
-     animationData: animation.export()
-     })
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export()
+      })
     }.bind(this), 200)
-    },
-    hideModal: function () {
+  },
+  hideModal: function () {
     // 隐藏遮罩层
     var animation = wx.createAnimation({
-     duration: 200,
-     timingFunction: "linear",
-     delay: 0
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
     })
     this.animation = animation
     animation.translateY(300).step()
     this.setData({
-     animationData: animation.export(),
+      animationData: animation.export(),
     })
     setTimeout(function () {
-     animation.translateY(0).step()
-     this.setData({
-     animationData: animation.export(),
-     showModalStatus: false
-     })
+      animation.translateY(0).step()
+      this.setData({
+        animationData: animation.export(),
+        showModalStatus: false
+      })
     }.bind(this), 200)
-    }
+  }
 })

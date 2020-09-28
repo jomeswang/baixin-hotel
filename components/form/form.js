@@ -277,7 +277,7 @@ Component({
                         console.log(e.data.order);
                         console.log(JSON.stringify(e.data.order));
 
-                        wx.navigateTo({
+                        wx.redirectTo({
                           url: '../hotelDetail/index?indexData=' + JSON.stringify(e.data.order),
                         })
 
