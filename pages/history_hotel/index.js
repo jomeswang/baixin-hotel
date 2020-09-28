@@ -83,7 +83,7 @@ Page({
     console.log(data);
 
     wx.navigateTo({
-      url: '../hotel/hotelDetail/index?indexData=' + data,
+      url: '../../pages/hotel/hotelDetail/index?indexData=' + data,
     })
 
   },

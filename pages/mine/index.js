@@ -54,7 +54,7 @@ Page({
    */
   enterHotelHis() {
     wx.navigateTo({
-      url: '../history_hotel/index',
+      url: '../../pages/history_hotel/index',
     })
   },
   /**
