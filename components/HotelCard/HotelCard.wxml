@@ -2,22 +2,22 @@
 	<view class='roomListItem' bindtap='hotelItemTap' data-id="{{index}}">
 		<image class='image' mode='scaleToFill' src='{{imageUrl}}'></image>
 		<view class='content'>
-			<text class='roomName'>{{roomName}}</text>
+			<text class='roomName'>{{roomList.name}}</text>
 			<view class="location">
 				<view class="filter0">
-					<text class="text1">{{bed}}</text>
+					<text class="text1">{{roomList.bed}}</text>
 				</view>
 				<view class="filter0">
-					<text class="text1">{{showArr.area}}</text>
+					<text class="text1">{{roomList.window}}</text>
 				</view>
 				<view class="filter0">
-					<text class="text1">舒服</text>
+					<text class="text1">{{roomList.peopleNum}}</text>
 				</view>
 				<view class="filter0">
-					<text class="text1">舒服</text>
+					<text class="text1">{{roomList.area}}</text>
 				</view>
 				<view class="filter0">
-					<text class="text1">舒服</text>
+					<text class="text1">{{roomList.introduction}}</text>
 				</view>
 
 			</view>
@@ -30,7 +30,7 @@
 			</view>
 			<view class='priceItem' >
 				<text class='price'>¥</text>
-				<text class='price' style="font-size:40rpx">{{price}}</text>
+				<text class='price' style="font-size:40rpx">{{roomList.price}}</text>
 				<text class='priceTip'>起</text>
 			</view>
 		</view>

@@ -115,21 +115,7 @@ Page({
     wx.showToast({
       title: '感谢您的认可，亲~',
     })
-    // console.log(this.data.likes)
-    // if (this.data.likes === 1) {
-    //   this.setData({
-    //     likes: 0
-    //   })
-    // } else
-    //   this.setData({
-    //     likes: 1
-    //   })
 
-    //   if (likes===1) {
-    //     likes=0
-    // }
-    // else
-    //   likes=1
   },
 
 
