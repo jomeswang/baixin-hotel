@@ -171,6 +171,7 @@ Component({
     // 订单提交
     formSubmit: function (e) {
       const that = this;
+      e.detail.value.order_room_num = 1
       for (let key in e.detail.value) {
         console.log(key)
         if (e.detail.value[key] === "") {
