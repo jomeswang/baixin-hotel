@@ -38,7 +38,7 @@
 		<!-- 一行 -->
 		<view class="location">
 			<view class="filter">
-				<image src="../../../res/iconfont/券.png" style="width:22px;height:22px"></image>
+				<image src="../../../res/iconfont/ticket.png" style="width:22px;height:22px"></image>
 				<text class="text3">入住后7张优惠券生效</text>
 			</view>
 		</view>
