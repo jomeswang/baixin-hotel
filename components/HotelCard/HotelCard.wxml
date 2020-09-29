@@ -5,10 +5,10 @@
 			<text class='roomName'>{{roomName}}</text>
 			<view class="location">
 				<view class="filter0">
-					<text class="text1">舒服</text>
+					<text class="text1">{{bed}}</text>
 				</view>
 				<view class="filter0">
-					<text class="text1">舒服</text>
+					<text class="text1">{{showArr.area}}</text>
 				</view>
 				<view class="filter0">
 					<text class="text1">舒服</text>
