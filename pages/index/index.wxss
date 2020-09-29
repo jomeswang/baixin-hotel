@@ -377,8 +377,9 @@ image {
 }
 
 .content .roomService {
-  color: #777;
+  color: #484343;
   font-size: 24rpx;
+  font-weight: 400;
 }
 
 .content .roomName {
@@ -389,8 +390,8 @@ image {
   color: rgba(72, 67, 67, 1);
   letter-spacing: 0.4099999964237213px;
   opacity: 1;
-  font-size: 26rpx;
-  font-weight: bold;
+  font-size: 40rpx;
+  font-weight: 400;
   color: black;
   flex: 1;
 }
