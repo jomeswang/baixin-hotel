@@ -53,7 +53,7 @@
 }
 
 .content .priceItem .price {
-  font-size: 35rpx;
+  font-size: 72rpx;
   font-weight: bold;
   color: #ff1d1d;
 }

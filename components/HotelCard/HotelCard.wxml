@@ -16,25 +16,28 @@
 				<view class="filter0">
 					<text class="text1">舒服</text>
 				</view>
+				<view class="filter0">
+					<text class="text1">舒服</text>
+				</view>
 
 			</view>
 			<text class='roomService' style="font-size:10px">{{eating}} 当天18:00前可以免费取消</text>
 			<!-- 一行 -->
-			<view class='priceItem'>
-				<image src="../../res/iconfont/ticket.png" style="width:20px;height:20px; vertical-align:middle"></image>
-				<text class='price'>订就送7张优惠券</text>
+			<view class='priceItem' style="display: inline-block;height:60rpx;width: 240rpx;border-radius: 16rpx;background-color: rgba(253, 125, 76, 0.15);text-align: center;">
+				<image src="../../res/iconfont/ticket.png" style="width:30rpx;height:30rpx; vertical-align:middle"></image>
+				<text class='price' style="vertical-align: middle;line-height: 60rpx;">订就送7张优惠券</text>
 				<text class='priceTip'></text>
 			</view>
-			<view class='priceItem'>
+			<view class='priceItem' >
 				<text class='price'>¥</text>
-				<text class='price' style="font-size:34rpx">{{price}}</text>
+				<text class='price' style="font-size:40rpx">{{price}}</text>
 				<text class='priceTip'>起</text>
 			</view>
 		</view>
     		<view wx:if="{{roomArr[index].roomNum<=0}}" class='bookBtn' data-id="{{index}}" hover-class='unbookBtnHover' catchtap="handleItem" data-index='{{index}}' style="background:#666">
 			预订
 		</view>
-		<view wx:if="{{roomArr[index].roomNum>0}}" class='bookBtn' data-id="{{index}}" hover-class='bookBtnHover' catchtap="handleItem" data-index='{{index}}' >
+		<view wx:if="{{roomArr[index].roomNum>0}}" class='bookBtn' data-id="{{index}}" hover-class='bookBtnHover' catchtap="handleItem" data-index='{{index}}' style="background-image: linear-gradient(44deg,rgba(249, 129, 75, 1),rgba(235, 74, 66, 1));">
 			预订
 		</view>
 

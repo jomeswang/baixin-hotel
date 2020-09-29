@@ -24,7 +24,7 @@
       </view>
     </view>
     <!-- 一行 -->
-    <view class="location">
+    <view class="location" style="margin-bottom:32rpx">
       <view class="filter">
         <text id="Text">桂庙新村16号，距深大地铁站0.5公里</text>
       </view>
