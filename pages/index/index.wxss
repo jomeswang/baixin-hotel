@@ -530,7 +530,7 @@ image {
 .book {
   position: absolute;
   right: 16rpx;
-  bottom: 40rpx;
+  bottom: 35rpx;
   width: 110rpx;
   height: 100rpx;
   border: 1px solid #EB4A42;
