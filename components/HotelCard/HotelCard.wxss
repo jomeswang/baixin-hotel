@@ -27,7 +27,9 @@
   bottom: 16rpx;
 }
 
-.content .scoreItem, .content .roomService, .content .priceItem {
+.content .scoreItem,
+.content .roomService,
+.content .priceItem {
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -63,17 +65,19 @@
   color: #3f3f3f;
 }
 
-.bookBtn, .bookBtnHover {
-  position: absolute;
+.bookBtn,
+.bookBtnHover {
+  /* position: absolute;
   right: 16rpx;
-  bottom: 16rpx;
+  bottom: 16rpx; */
   border-radius: 8rpx;
   color: white;
   font-size: 26rpx;
   padding: 8rpx 32rpx;
   background: #fe7e38;
 }
-.unbookBtn{
+
+.unbookBtn {
   position: absolute;
   right: 16rpx;
   bottom: 16rpx;
@@ -81,11 +85,22 @@
   color: white;
   font-size: 26rpx;
   padding: 8rpx 32rpx;
-  background:rgba(0,0,0,0.22);
+  background: rgba(0, 0, 0, 0.22);
 }
 
 
 
 .bookBtnHover {
   background: #e55509;
+}
+
+/* 预定按钮部分 */
+.book {
+  position: absolute;
+  right: 16rpx;
+  bottom: 16rpx;
+  width: 110rpx ;
+  height: 100rpx !important;
+  border: 1rpx solid #EB4A42;
+  border-radius: 10rpx;
 }

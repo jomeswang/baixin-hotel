@@ -431,13 +431,14 @@ image {
 
 .bookBtn,
 .bookBtnHover {
-  position: absolute;
+  /* position: absolute;
   right: 16rpx;
-  bottom: 16rpx;
-  border-radius: 8rpx;
+  bottom: 16rpx; */
+  /* border-radius: 8rpx; */
   color: white;
   font-size: 26rpx;
-  padding: 8rpx 32rpx;
+  padding: 16rpx 20rpx;
+  text-align: center;
 }
 
 .bookBtn {
@@ -522,4 +523,16 @@ image {
 .mes .items .item {
   flex: 1;
   height: 36rpx;
+}
+
+
+/* 预定按钮部分 */
+.book {
+  position: absolute;
+  right: 16rpx;
+  bottom: 40rpx;
+  width: 110rpx;
+  height: 100rpx;
+  border: 1px solid #EB4A42;
+  border-radius: 10rpx;
 }
