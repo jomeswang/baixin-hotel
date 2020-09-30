@@ -193,7 +193,7 @@ image {
 .location .filter0 {
   /* width: 26px; */
   /* height: 22px; */
-  padding: 6rpx;
+  padding: 7rpx;
   white-space: nowrap;
   /* display: flex; */
   /* flex-direction: row; */
@@ -203,8 +203,14 @@ image {
   background: rgba(88, 87, 87, 0.1);
   /* margin: 16rpx; */
   font-size: 16rpx;
-  border-radius: 10rpx;
-
+  border-radius: 20rpx;
+}
+.location .cardfilter{
+  padding: 12rpx;
+  white-space: nowrap;
+  background: rgba(88, 87, 87, 0.1);
+  font-size: 16rpx;
+  border-radius: 20rpx;
 }
 
 .filter1 {
@@ -224,6 +230,7 @@ image {
   text-align: center;
   width: 60px;
 }
+
 
 .schedule {
 

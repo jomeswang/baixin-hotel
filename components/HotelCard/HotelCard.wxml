@@ -24,7 +24,7 @@
 			<text class='roomService' style="font-size:10px">{{eating}} 当天18:00前可以免费取消</text>
 			<!-- 一行 -->
 			<view class='priceItem' style="display: inline-block;height:60rpx;width: 240rpx;border-radius: 16rpx;background-color: rgba(253, 125, 76, 0.15);text-align: center;">
-				<image src="../../res/iconfont/ticket.png" style="width:30rpx;height:30rpx; vertical-align:middle"></image>
+				<image src="../../res/iconfont/ticket.png" style="width:44rpx;height:44rpx; vertical-align:middle"></image>
 				<text class='price' style="vertical-align: middle;line-height: 60rpx;">订就送7张优惠券</text>
 				<text class='priceTip'></text>
 			</view>

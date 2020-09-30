@@ -31,19 +31,19 @@
     </view>
     <!-- 一行 -->
     <view class="location">
-      <view class="filter0">
+      <view class="cardfilter">
         <text class="text1">舒适</text>
       </view>
-      <view class="filter0">
+      <view class="cardfilter">
         <text class="text1">独栋</text>
       </view>
-      <view class="filter0">
+      <view class="cardfilter">
         <text class="text1">停车场</text>
       </view>
-      <view class="filter0">
+      <view class="cardfilter">
         <text class="text1">近深大</text>
       </view>
-      <view class="filter0">
+      <view class="cardfilter">
         <text class="text1">市区</text>
       </view>
     </view>
