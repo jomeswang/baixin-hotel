@@ -21,7 +21,10 @@
 				</view>
 
 			</view>
-			<text class='roomService' style="font-size:10px">{{eating}} 当天18:00前可以免费取消</text>
+			<view class='roomService' style="padding:0rpx 16rpx;font-size:10px; justify-content: space-between;">
+				<view>{{eating}}</view>
+				<view> 当天18:00前可以免费取消</view>
+			</view>
 			<!-- 一行 -->
 			<view class='priceItem'
 				style="display: inline-block;height:60rpx;width: 240rpx;border-radius: 16rpx;background-color: rgba(253, 125, 76, 0.15);text-align: center;">
@@ -50,9 +53,9 @@
 			</view>
 
 			<view wx:if="{{roomArr[index].roomNum<=0}}"
-				style="color:#EB4A42;font-size:18rpx;text-align: center;line-height:2;">电话订房</view>
+				style="color:#EB4A42;font-size:20rpx;text-align: center;line-height:2;"  catchtap="callPhone">电话订房</view>
 			<view wx:if="{{roomArr[index].roomNum>0}}"
-				style="color:#484843;font-size:18rpx;text-align: center;line-height:2;">全网最低</view>
+				style="color:#484843;font-size:20rpx;text-align: center;line-height:2;">全网最低</view>
 		</view>
 	</view>
 </template>
