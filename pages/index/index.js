@@ -271,6 +271,18 @@ this.setData({
       phoneNumber: '‭075586298588‬',
     })
   },
+  /**
+   * 导航
+   */
+  navigate() {
+    wx.openLocation({
+      latitude: 22.525669,
+      longitude: 113.932348,
+      "name": "百姓渔村(桂庙新村店)",
+      "address": "广东省深圳市南山区桂庙新村41号"
+    })
+    //~
+  },
   // 订房的跳转
   handleItem(e) {
     const index = e.currentTarget.dataset.id

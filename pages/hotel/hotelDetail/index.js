@@ -25,8 +25,8 @@ Page({
       name: 'refund',
       data: {
         id: this.data.data.outTradeNo,
-        total_fee: Number(this.data.data.price)*100,
-        refund_fee: Number(this.data.data.price)*100,
+        total_fee: Number(this.data.data.price) * 100,
+        refund_fee: Number(this.data.data.price) * 100,
       },
       success: res => {
         wx.hideLoading()
@@ -132,7 +132,19 @@ Page({
       url: '../../index/index',
     })
   },
-
+  /**
+   * 导航
+   */
+  navigate() {
+    //打开内置地图，显示酒店位置（地图中可以点击导航）
+    wx.openLocation({
+      latitude: 22.525669,
+      longitude: 113.932348,
+      "name": "百姓渔村(桂庙新村店)",
+      "address": "广东省深圳市南山区桂庙新村41号"
+    })
+    //~
+  },
   /**
    * 用户点击右上角分享
    */
