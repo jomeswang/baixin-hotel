@@ -14,7 +14,7 @@
       <view class="roomSecondline"><text>{{roomList.introduction}}</text><text>当天18:00前可免费取消</text></view>
       <view class="roomThird">
         <view class="price"><text>￥{{roomList.price}}</text></view>
-        <view class="button"><text>按钮</text></view>
+        <view class="button"><text>预订</text></view>
       </view>
     </view>
   </view>

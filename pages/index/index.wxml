@@ -20,7 +20,7 @@
     <!-- 一行 -->
     <view class="location">
       <view class="filter">
-        <text class="text" style="font-size:44rpx;padding:22rpx">百 姓 渔 村 酒 店</text>
+        <text class="text" style="font-size:48rpx;padding:44rpx 0rpx 12rpx">百姓渔村酒店</text>
       </view>
     </view>
     <!-- 一行 -->
@@ -51,11 +51,11 @@
 
     <view class="detail">
       <view class="nav" bindtap="navigate">
-        <image class="iconImg" style="margin-right:10rpx" src="../../res/images/ic_nav.png"></image> <text style="color:#EB4A42;font-size:30rpx;font-weight: 600;"> 一键导航</text>
+        <image class="iconImg" style="margin-right:10rpx" src="../../res/images/ic_nav.png"></image> <text style="color:#EB4A42;font-size:20rpx;font-weight: 600;"> 一键导航</text>
       </view>
       <view class="line" style="color: #EB4A42;">|</view>
       <view class="tel" bindtap="callPhone">
-        <image class="iconImg" style="margin-right:10rpx" src="../../res/iconfont/phone.png"></image><text style="color:#EB4A42;font-size:30rpx;font-weight: 600;"> 联系电话</text>
+        <image class="iconImg" style="margin-right:10rpx" src="../../res/iconfont/phone.png"></image><text style="color:#EB4A42;font-size:20rpx;font-weight: 600;"> 联系电话</text>
       </view>
     </view>
     <!-- 一行 -->
