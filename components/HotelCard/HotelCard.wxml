@@ -1,53 +1,22 @@
 <template name="roomListItem">
-	<view class='roomListItem' bindtap='hotelItemTap' data-id="{{index}}">
-		<image class='image' mode='scaleToFill' src='{{imageUrl}}'></image>
-		<view class='content'>
-			<text class='roomName'>{{roomList.name}}</text>
-			<view class="location">
-				<view class="filter0">
-					<text class="text1">{{roomList.bed}};</text>
-				</view>
-				<view class="filter0">
-					<text class="text1">{{roomList.window}};</text>
-				</view>
-				<view class="filter0">
-					<text class="text1">{{roomList.peopleNum}};</text>
-				</view>
-				<view class="filter0">
-					<text class="text1">{{roomList.area}};</text>
-				</view>
-				<view class="filter0">
-					<text class="text1">{{roomList.introduction}};</text>
-				</view>
+  <view class="roomCard" bindtap='hotelItemTap' data-id="{{index}}">
+    <view class="roomImg_wrap">
+      <image class="roomImg" mode="aspectFill" src='{{imageUrl}}' />
 
+    </view>
+    <view class="rightContent">
+      <view class="roomName">
+        <text>{{roomList.name}}</text>
+      </view>
+			<view class="roomFirstline"><text>{{roomList.name}};</text><text>{{roomList.bed}};</text><text>{{roomList.window}};</text><text>{{roomList.peopleNum}};</text><text>{{roomList.area}};</text>
+			
 			</view>
-			<view class='roomService' style="padding:0rpx 16rpx;font-size:10px; justify-content: space-between;">
-				<view>{{eating}}</view>
-				<view> 当天18:00前可以免费取消</view>
-			</view>
-			<!-- 一行 -->
-		
-			<view class='priceItem'>
-				<text class='price'>¥</text>
-				<text class='price' style="font-size:40rpx">{{roomList.price}}</text>
-				<text class='priceTip'>起</text>
-			</view>
-		</view>
-		<view class="book">
-			<view wx:if="{{roomArr[index].roomNum<=0}}" catchtap="callPhone" class='bookBtn' data-id="{{index}}" hover-class='unbookBtnHover'
-				catchtap="handleItem" data-index='{{index}}' style="background:#666;">
-				预订
-			</view>
-			<view wx:if="{{roomArr[index].roomNum>0}}" class='bookBtn' data-id="{{index}}" hover-class='bookBtnHover'
-				catchtap="handleItem" data-index='{{index}}'
-				style="background-image: linear-gradient(44deg,rgba(249, 129, 75, 1),rgba(235, 74, 66, 1));">
-				预订
-			</view>
-
-			<view wx:if="{{roomArr[index].roomNum<=0}}"
-				style="color:#EB4A42;font-size:20rpx;text-align: center;line-height:2;"  catchtap="callPhone">电话订房</view>
-		
-		</view>
-	</view>
+      <view class="roomSecondline"><text>{{roomList.introduction}}</text><text>当天18:00前可免费取消</text></view>
+      <view class="roomThird">
+        <view class="price"><text>￥{{roomList.price}}</text></view>
+        <view class="button"><text>按钮</text></view>
+      </view>
+    </view>
+  </view>
 </template>
 <!-- 样式搞出来 -->

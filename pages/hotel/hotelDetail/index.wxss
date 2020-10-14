@@ -9,7 +9,7 @@ Page {
 }
 
 .nothing {
-
+  background-color: #FFFAFA;
   height: 200rpx;
 }
 

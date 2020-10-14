@@ -3,6 +3,7 @@
 Page {
   width: 100%;
   height: 100%;
+  background-color: #FFFAFA;
 }
 
 .homeHeader {
@@ -10,10 +11,12 @@ Page {
   height: 350rpx;
 
 }
-.iconImg{
+
+.iconImg {
   width: 32rpx;
   height: 32rpx;
 }
+
 .detail {
   display: flex;
   display: -webkit-flex;
@@ -48,7 +51,8 @@ image {
   width: 24rpx;
   height: 24rpx;
 }
-.likes_wrap{
+
+.likes_wrap {
   flex: 1;
   /* height: max-content; */
   box-sizing: border-box;
@@ -62,11 +66,13 @@ image {
   color: red;
   background-color: white;
 }
-.likes_wrap image{
+
+.likes_wrap image {
   width: 40rpx;
   height: 40rpx;
 }
-.likes_text{
+
+.likes_text {
   font-weight: 550;
   font-size: 35rpx;
   padding: 10rpx;
@@ -104,7 +110,7 @@ image {
   width: 100%;
   box-sizing: border-box;
   position: absolute;
-  top: 400rpx;
+  top: 350rpx;
   z-index: 3;
   padding: 0 28rpx;
   height: 460rpx;
@@ -206,7 +212,8 @@ image {
   font-size: 16rpx;
   border-radius: 20rpx;
 }
-.location .cardfilter{
+
+.location .cardfilter {
   padding: 12rpx;
   white-space: nowrap;
   background: rgba(88, 87, 87, 0.1);
@@ -234,11 +241,10 @@ image {
 
 
 .schedule {
-
   box-sizing: border-box;
   width: 100%;
-  background: white;
-  padding: 24rpx;
+  background-color: #FFFAFA;
+  padding: 24rpx 24rpx 0rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -315,13 +321,13 @@ image {
 /* ......end */
 .nothing {
   z-index: 2;
-  height: 460rpx;
+  height: 363rpx;
+  background-color: #FFFAFA;
 
 }
 
 .roomListItem {
-  width: 100%;
-  height: 272rpx;
+ 
   padding: 16rpx;
   display: flex;
   flex-direction: row;
@@ -336,7 +342,7 @@ image {
   height: 208rpx;
   /* border-radius: 20rpx; */
   margin-right: 16rpx;
- 
+
 }
 
 .roomListItem .content {
@@ -536,4 +542,92 @@ image {
   height: 100rpx;
   border: 1px solid #EB4A42;
   border-radius: 10rpx;
+}
+
+/* 卡片页面的样式 */
+.roomCard {
+  display: flex;
+  margin: 15rpx 0rpx 30rpx;
+  border: 4rpx;
+  border-radius: 16rpx;
+  background: white;
+  box-shadow: 0rpx 8rpx 20rpx #bbb
+}
+
+.roomCard .roomImg_wrap {
+
+  border: 1rpx solid red;
+  margin: 32rpx 18rpx 32rpx 36rpx;
+  width: 228rpx;
+  height: 208rpx;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
+.roomCard .roomImg_wrap .roomImg {
+  width: 100%;
+  height: 100%;
+}
+
+.roomCard .rightContent {
+  width: 446rpx;
+  height: 204rpx;
+  
+  display: flex;
+  flex-direction: column;
+  margin: 32rpx 36rpx 32rpx 18rpx;
+}
+.roomCard .rightContent .roomName {
+ 
+}
+.roomCard .rightContent .roomName text{
+  font-weight: 600;
+  font-size: 32rpx;
+color: #484343;
+letter-spacing: 0.4099999964237213px;
+}
+.roomCard .rightContent .roomFirstline text{
+  font-size: 22rpx; 
+  padding: 0rpx 12rpx 0rpx 0rpx;
+}
+
+.roomCard .rightContent .roomSecondline text{
+  font-size: 28rpx;
+  padding: 0rpx 20rpx 0rpx 0rpx;
+}
+
+.roomCard .rightContent .roomThird {
+  line-height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx 8rpx 0rpx;
+}
+.roomCard .rightContent .roomThird .price text {
+  font-size: 36rpx;
+  font-weight: 600;
+  
+color: #EB4A42;
+
+  
+}
+.roomCard .rightContent .roomThird .button  {
+  width: 116rpx;
+background: linear-gradient(46deg, #F9814B 0%, #EB4A42 100%);
+  height: 50rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  align-items: center;
+  line-height: 38rpx;
+}
+
+.roomCard .rightContent .roomThird .button text {
+  font-size: 24rpx;
+  font-weight: 400;
+  line-height: 38rpx;
+color: #FFFFFF;
+  
 }
