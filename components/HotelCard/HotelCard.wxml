@@ -5,19 +5,19 @@
 			<text class='roomName'>{{roomList.name}}</text>
 			<view class="location">
 				<view class="filter0">
-					<text class="text1">{{roomList.bed}}</text>
+					<text class="text1">{{roomList.bed}};</text>
 				</view>
 				<view class="filter0">
-					<text class="text1">{{roomList.window}}</text>
+					<text class="text1">{{roomList.window}};</text>
 				</view>
 				<view class="filter0">
-					<text class="text1">{{roomList.peopleNum}}</text>
+					<text class="text1">{{roomList.peopleNum}};</text>
 				</view>
 				<view class="filter0">
-					<text class="text1">{{roomList.area}}</text>
+					<text class="text1">{{roomList.area}};</text>
 				</view>
 				<view class="filter0">
-					<text class="text1">{{roomList.introduction}}</text>
+					<text class="text1">{{roomList.introduction}};</text>
 				</view>
 
 			</view>
@@ -26,12 +26,7 @@
 				<view> 当天18:00前可以免费取消</view>
 			</view>
 			<!-- 一行 -->
-			<view class='priceItem'
-				style="display: inline-block;height:60rpx;width: 240rpx;border-radius: 16rpx;background-color: rgba(253, 125, 76, 0.15);text-align: center;">
-				<image src="../../res/iconfont/ticket.png" style="width:44rpx;height:44rpx; vertical-align:middle"></image>
-				<text class='price' style="vertical-align: middle;line-height: 70rpx;font-size: 20rspx;">订就送7张优惠券</text>
-				<text class='priceTip'></text>
-			</view>
+		
 			<view class='priceItem'>
 				<text class='price'>¥</text>
 				<text class='price' style="font-size:40rpx">{{roomList.price}}</text>
@@ -43,9 +38,6 @@
 				catchtap="handleItem" data-index='{{index}}' style="background:#666;">
 				预订
 			</view>
-
-
-
 			<view wx:if="{{roomArr[index].roomNum>0}}" class='bookBtn' data-id="{{index}}" hover-class='bookBtnHover'
 				catchtap="handleItem" data-index='{{index}}'
 				style="background-image: linear-gradient(44deg,rgba(249, 129, 75, 1),rgba(235, 74, 66, 1));">
@@ -54,8 +46,7 @@
 
 			<view wx:if="{{roomArr[index].roomNum<=0}}"
 				style="color:#EB4A42;font-size:20rpx;text-align: center;line-height:2;"  catchtap="callPhone">电话订房</view>
-			<view wx:if="{{roomArr[index].roomNum>0}}"
-				style="color:#484843;font-size:20rpx;text-align: center;line-height:2;">全网最低</view>
+		
 		</view>
 	</view>
 </template>
