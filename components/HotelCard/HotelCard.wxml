@@ -14,7 +14,14 @@
       <view class="roomSecondline"><text>{{roomList.introduction}}</text><text>当天18:00前可免费取消</text></view>
       <view class="roomThird">
         <view class="price"><text>￥{{roomList.price}}</text></view>
-        <view class="button"><text>预订</text></view>
+        <!-- 如果没房子 -->
+        <view class="button" wx:if="{{roomArr[index].roomNum<=0}}" catchtap="callPhone"  data-id="{{index}}" hover-class='unbookBtnHover'
+        catchtap="handleItem" data-index='{{index}}' style="background:#666;"><text>已订满</text></view>
+        <!-- 如果有房子 -->
+        <view wx:if="{{roomArr[index].roomNum>0}}" class='button' data-id="{{index}}" 
+          catchtap="handleItem" data-index='{{index}}'>
+          预订
+        </view>
       </view>
     </view>
   </view>

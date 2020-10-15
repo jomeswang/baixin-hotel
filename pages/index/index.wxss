@@ -262,10 +262,29 @@ image {
 }
 
 .divideText {
-  flex: 1;
   text-align: center;
-  font-size: 26rpx;
-  color: black;
+  font-size: 28rpx;
+  color: #484343;
+  font-weight: 400;
+  margin-bottom: 50rpx;
+}
+
+.schedule-wrapper {
+  width: 100%;
+  display: flex;
+  padding: 33rpx 5rpx 25rpx 5rpx;
+}
+
+.date-content {
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: center;
+}
+.date-Midcontent{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 /* start */
@@ -290,35 +309,19 @@ image {
   position: relative;
 }
 
-.dateItem .date {
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-}
-
-.dateItem .date .day {
+.date {
   height: fit-content;
-  font-size: 45rpx;
+  font-weight: 400;
+  font-size: 32rpx;
   color: #ee6715;
   text-align: center;
 }
 
-.dateItem .date .monthWeek {
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  margin-left: 6rpx;
-}
-
-.dateItem .date .monthWeek .week,
-.dateItem .date .monthWeek .month {
-  flex: 1;
-  font-size: 22rpx;
-}
-
 .dayCount {
-  font-size: 32rpx;
+  font-size: 28rpx;
   margin: 0 10rpx;
+  font-weight: 400;
+color: #EB4A42;
 }
 
 /* ......end */
@@ -327,6 +330,10 @@ image {
   height: 312rpx;
   background-color: #FFFAFA;
 
+}
+.arrowImg{
+  width: 138rpx;
+  height: 18rpx;
 }
 
 .roomListItem {
@@ -596,13 +603,15 @@ image {
 .roomCard .rightContent .roomFirstline text {
   font-size: 22rpx;
   padding: 0rpx 12rpx 0rpx 0rpx;
+  
+color: #707070;
 }
 .roomCard .rightContent .roomSecondline{
   margin-top: 10rpx;
 }
 
 .roomCard .rightContent .roomSecondline text {
-  font-size: 28rpx;
+  font-size: 24rpx;
   padding: 0rpx 20rpx 0rpx 0rpx;
 }
 
@@ -632,6 +641,8 @@ image {
   text-align: center;
   align-items: center;
   line-height: 43rpx;
+  color: white;
+  font-size: 24rpx;
 }
 
 .roomCard .rightContent .roomThird .button text {

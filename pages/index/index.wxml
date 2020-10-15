@@ -51,54 +51,43 @@
 
     <view class="detail">
       <view class="nav" bindtap="navigate">
-        <image class="iconImg" style="margin-right:10rpx" src="../../res/images/ic_nav.png"></image> <text style="color:#EB4A42;font-size:20rpx;font-weight: 600;"> 一键导航</text>
+        <image class="iconImg" style="margin-right:10rpx" src="../../res/images/ic_nav.png"></image> <text
+          style="color:#EB4A42;font-size:20rpx;font-weight: 600;"> 一键导航</text>
       </view>
       <view class="line" style="color: #EB4A42;">|</view>
       <view class="tel" bindtap="callPhone">
-        <image class="iconImg" style="margin-right:10rpx" src="../../res/iconfont/phone.png"></image><text style="color:#EB4A42;font-size:20rpx;font-weight: 600;"> 联系电话</text>
+        <image class="iconImg" style="margin-right:10rpx" src="../../res/iconfont/phone.png"></image><text
+          style="color:#EB4A42;font-size:20rpx;font-weight: 600;"> 联系电话</text>
       </view>
     </view>
     <!-- 一行 -->
     <view class="likes_wrap">
-     <image  src="../../res/iconfont/likesImg.png"></image>
-        <text class="likes_text">9.2K</text>
+      <image src="../../res/iconfont/likesImg.png"></image>
+      <text class="likes_text">9.2K</text>
     </view>
   </view>
 </view>
 <!-- 占位 让其恢复文档流 -->
 <view class="nothing"></view>
 <!-- 时间 -->
-<view class="schedule">
-  <text class="divideText">入住时间</text>
-  <text class="divideText">退房时间</text>
-</view>
-<!-- 日期计算 -->
-<view class='dateContent'>
-  <view class='dateItem'>
+<view class="schedule-wrapper">
+  <view class="date-content">
+    <text class="divideText">入住时间</text>
     <picker class='date' mode="date" value="{{startDate}}" start="{{currentDate}}" end="{{endOfStartDate}}"
       bindchange="startDateChange">
-      <view class='date'>
-        <text class='day'>{{startDay}}</text>
-        <view class='monthWeek'>
-          <text class='month'>{{startMonth}}月</text>
-          <text class='week'>{{startWeek}}</text>
-        </view>
-      </view>
+      <view class="day">{{startMonth}}月{{startDay}}日</view>
     </picker>
-    <view class='horizontalLine' style='width:60rpx;position:absolute;right:0;'>—</view>
   </view>
-  <text class='dayCount'>{{dayCount}}天</text>
-  <view class='dateItem'>
-    <view class='horizontalLine' style='width:60rpx;position:absolute;'>—</view>
-    <picker class='date' mode="date" value="{{endDate}}" start="{{startDate}}" end="{{endOfEndDate}}"
-      bindchange="endDateChange">
-      <view class='date'>
-        <text class='day'>{{endDay}}</text>
-        <view class='monthWeek'>
-          <text class='month'>{{endMonth}}月</text>
-          <text class='week'>{{endWeek}}</text>
-        </view>
-      </view>
+  <view class="date-Midcontent">
+    <text class='dayCount'>{{dayCount}}晚</text>
+
+    <image class="arrowImg" src="https://7465-test-yb8a7-1302889904.tcb.qcloud.la/arrow.png?sign=8da1efe4f9c12debed931b825f9da892&t=1602775438" ></image>
+  </view>
+  <view class="date-content">
+    <text class="divideText">离店时间</text>
+    <picker class='date' mode="date" value="{{endDate}}" start="{{endDate}}" end="{{endOfEndDate}}"
+      bindchange="startDateChange">
+      <view class="day">{{endMonth}}月{{endDay}}日</view>
     </picker>
   </view>
 </view>
