@@ -11,7 +11,7 @@
 		<!-- 一行 -->
 		<view class="location">
 			<view class="filter">
-				<text class="text">{{data.status}}成功预订-待确认</text>
+				<text class="text">{{data.status}}</text>
 			</view>
 		</view>
 		<!-- 一行 -->
@@ -36,16 +36,16 @@
 <!-- 中间的内容 -->
 <view class='MediumContent' style="overflow:hidden">
 
-	<view style='margin-top:10rpx;'>预订房型：{{data.order_room_type}}</view>
-	<view style='margin-top:10rpx;'>入住房客：{{data.form.order_name}}</view>
-	<view style='margin-top:10rpx;'>入住时间：{{data.order_begin_time}}/{{data.order_end_time}}</view>
-	<view style='margin-top:10rpx;'>联系电话</view>
-	<view style='margin-top:10rpx;'>订单编号：{{data._id}}</view>
-	<view style='margin-top:10rpx;'></view>
+	<view id="MidTextLine">预订房型：{{data.order_room_type}}/一间</view>
+	<view id="MidTextLine">入住房客：{{data.form.order_name}}</view>
+	<view id="MidTextLine">入住时间：{{data.order_begin_time}}/{{data.order_end_time}}</view>
+	<view id="MidTextLine">联系电话: {{data.form.order_phone_number}}</view>
+	<view id="MidTextLine">订单编号：{{data._id}}</view>
+	<view id="MidTextLine"></view>
 	<!-- 文末右边 -->
 	<view class="content-right">
 		<view wx:if="{{data.status=='待确认'}}" bindtap="cancelOrder" id="right-text"
-			style=" border:#666 5rpx solid;color:rgba(108,104,104,1)">取消订单</view>
+			style=" border: 1px solid rgba(72, 67, 67, 0.8);color: #6C6868;">取消订单</view>
 		<view id="right-text" bindtap="backToIndex">再次预订</view>
 	</view>
 </view>
