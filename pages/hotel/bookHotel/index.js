@@ -2,6 +2,8 @@
 // 接口有数据后来这里绑定
 // var util=require("../../../utils/util.js")
 // var DATE=util.formatTime(new Date())
+
+// 以下的数据我不确定能不能删  反正看着好恶心
 var roomPrice;
 var hotelName;
 var roomName;

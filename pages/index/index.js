@@ -28,25 +28,7 @@ var endOfEndDate = '2020-12-31';
 var dayCount = 1;
 //首页收到的数据
 var id;
-var name;
-var description;
-var area;
-var bed;
-var peopleNum;
-var addBed;
-var morningTea;
-var window;
-var bathroom;
-var convenience;
-var guestRoom;
-var introduction;
-var price;
-var deposit;
-var imgUrl;
-var read;
-var bookKnow;
-var roomNum;
-var arr1 = ""
+
 // 点赞
 
 
@@ -78,60 +60,15 @@ Page({
     endWeek: '',
     dayCount: 1,
     // hotel
-    hotelName: '',
-    hotelAddress: '',
+
     // 点赞
     likes: 1,
-    // 首页得到的数据
-    id: "",
-    name: "",
-    description: "",
-    area: "",
-    bed: "",
-    peopleNum: "",
-    addBed: "",
-    morningTea: "",
-    window: "",
-    bathroom: "",
-    convenience: "",
-    guestRoom: "",
-    introduction: "",
-    price: "",
-    deposit: "",
-    imgUrl: "",
-    read: "",
-    bookKnow: "",
-    roomNum: "",
+
     roomArr: [],
     showArr: [],
     // 用于判定的房间数量
     indexdata:[],
 
-    // roomArray: [{
-    //   image: '../../res/images/ic_hotel_image.png',
-    //   name: '标准单人间',
-    //   service: 'WiFi/有窗/空调',
-    //   eating: "早饭",
-    //   time: "当天18:00前可免费取消",
-    //   price: 158,
-
-
-    // }, {
-    //   image: '../../res/images/ic_hotel_image.png',
-    //   name: '标准双人间',
-    //   service: 'WiFi/有窗/空调',
-    //   price: 258
-    // }, {
-    //   image: '../../res/images/ic_hotel_image.png',
-    //   name: '豪华单人间',
-    //   service: 'WiFi/有窗/空调',
-    //   price: 198
-    // }, {
-    //   image: '../../res/images/ic_hotel_image.png',
-    //   name: '豪华双人间',
-    //   service: 'WiFi/有窗/空调',
-    //   price: 358
-    // }, ],
   },
   //事件处理函数
   bindViewTap: function () {
@@ -150,7 +87,36 @@ Page({
     this.initEndDate();
 
     this.setSearchDate();
-    wx.request({
+    // wx.request({
+    //   url: 'https://ht1.jomeswang.top/api/room/',
+      
+    //   method: "GET",
+    //   header:{
+    //     "x-access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
+    //   },
+    //   success: e => {
+    //     // console.log(e,'e');
+        
+    //     e.data.forEach((item, index) => {
+
+    //       // console.log(JSON.parse(item))
+    //       this.setData({
+    //         roomArr: this.data.roomArr.concat(JSON.parse(item)),
+    //       })
+
+    //     })
+
+    //   }
+
+    // })
+
+  },
+  onShow(){
+    const arr=[];
+    wx.showLoading({
+      title: '获取房源中',
+    })
+      wx.request({
       url: 'https://ht1.jomeswang.top/api/room/',
       
       method: "GET",
@@ -158,48 +124,30 @@ Page({
         "x-access-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
       },
       success: e => {
-        console.log(e,'e');
-        
+        // console.log(e,'e');
+        wx.hideLoading()
         e.data.forEach((item, index) => {
-
+          arr.push(JSON.parse(item))
           // console.log(JSON.parse(item))
-          this.setData({
-            roomArr: this.data.roomArr.concat(JSON.parse(item)),
-          })
-
+          // this.setData({
+          //   roomArr: this.data.roomArr.concat(JSON.parse(item)),
+          // })
         })
-
-        // this.setData({
-        //   arr1:JSON.parse(e)
-        console.log(this.data.roomArr)
-        // })
-        // console.log( 
-        //   this.data.arr1)
-
+this.setData({
+  roomArr:arr
+})
+      },
+      fail:e=>{
+        wx.hideLoading()
       }
 
     })
-
   },
   likesItem: function (e) {
     wx.showToast({
       title: '感谢您的认可，亲~',
     })
-    // console.log(this.data.likes)
-    // if (this.data.likes === 1) {
-    //   this.setData({
-    //     likes: 0
-    //   })
-    // } else
-    //   this.setData({
-    //     likes: 1
-    //   })
 
-    //   if (likes===1) {
-    //     likes=0
-    // }
-    // else
-    //   likes=1
   },
 
 
@@ -323,6 +271,18 @@ Page({
       phoneNumber: '‭075586298588‬',
     })
   },
+  /**
+   * 导航
+   */
+  navigate() {
+    wx.openLocation({
+      latitude: 22.525669,
+      longitude: 113.932348,
+      "name": "百姓渔村(桂庙新村店)",
+      "address": "广东省深圳市南山区桂庙新村41号"
+    })
+    //~
+  },
   // 订房的跳转
   handleItem(e) {
     const index = e.currentTarget.dataset.id
@@ -340,7 +300,7 @@ Page({
     
     if(this.data.roomArr[index].roomNum>0){
     wx.navigateTo({
-      // url: '../../pages/hotel/bookHotel/index?startDate=' + this.data.startDate + "&endDate=" + this.data.endDate + "&dayCount=" + this.data.dayCount + "&name=" + this.data.name + "&read=" + this.data.read + "&price=" + this.data.price + "&deposit=" + this.data.deposit + "&status" + this.data.status,
+    
       url: '../../pages/hotel/bookHotel/index?indexData=' + JSON.stringify(this.data.roomArr[index]) + "&startDate=" + this.data.startDate + "&endDate=" + this.data.endDate + "&dayCount=" + this.data.dayCount
     })}
   },

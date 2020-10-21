@@ -15,23 +15,19 @@
 			</view>
 		</view>
 		<!-- 一行 -->
-		<view class="location">
-			<view class="filter">
-				<image src="../../../res/iconfont/导航.png" style="width:24px;height:24px"></image>
-				<text class="text2">一键导航</text>
-			</view>
-			<view style='color:#ccc;text-align: center;'>|</view>
-			<view class="filter" bindtap="callPhone">
-				<image src="../../../res/iconfont/电话.jpg" style="width:24px;height:24px"></image>
-				<text class="text2" >联系电话</text>
-			</view>
-		</view>
+
+		<view class="detail">
+      <view class="nav" bindtap="navigate">
+        <image class="iconImg" style="margin-right:10rpx" src="../../../res/images/ic_nav.png"></image> <text id="cardText"> 一键导航</text>
+      </view>
+      <view class="line" style="color: #EB4A42;">|</view>
+      <view class="tel" bindtap="callPhone">
+        <image class="iconImg" style="margin-right:10rpx" src="../../../res/iconfont/phone.png"></image><text id="cardText"> 联系电话</text>
+      </view>
+    </view>
 		<!-- 一行 -->
 		<view class="location">
-			<view class="filter">
-				<image src="../../../res/iconfont/券.png" style="width:22px;height:22px"></image>
-				<text class="text3">入住后7张优惠券生效</text>
-			</view>
+
 		</view>
 	</view>
 </view>
@@ -39,27 +35,28 @@
 <view class="nothing"></view>
 <!-- 中间的内容 -->
 <view class='MediumContent' style="overflow:hidden">
-	<view>深圳市百姓渔村</view>
-	<view style='margin-top:10rpx;'>房型：{{data.order_room_type}}</view>
-	<view style='margin-top:10rpx;'>房客：{{data.form.order_name}}</view>
-	<view style='margin-top:10rpx;'>入住时间：{{data.order_begin_time}}/{{data.order_end_time}}</view>
-	<view style='margin-top:10rpx;'>订单编号：{{data._id}}</view>
-	<view style='margin-top:10rpx;'></view>
+
+	<view id="MidTextLine">预订房型：{{data.order_room_type}}/一间</view>
+	<view id="MidTextLine">入住房客：{{data.form.order_name}}</view>
+	<view id="MidTextLine">入住时间：{{data.order_begin_time}}/{{data.order_end_time}}</view>
+	<view id="MidTextLine">联系电话: {{data.form.order_phone_number}}</view>
+	<view id="MidTextLine">订单编号：{{data._id}}</view>
+	<view id="MidTextLine"></view>
 	<!-- 文末右边 -->
 	<view class="content-right">
-		<view wx:if="{{data.status=='待入住'}}" bindtap="cancelOrder" id="right-text"
-			style=" border:#666 5rpx solid;color:rgba(108,104,104,1)">取消订单</view>
+		<view wx:if="{{data.status=='待确认'}}" bindtap="cancelOrder" id="right-text"
+			style=" border: 1px solid rgba(72, 67, 67, 0.8);color: #6C6868;">取消订单</view>
 		<view id="right-text" bindtap="backToIndex">再次预订</view>
 	</view>
 </view>
 <!-- 底部的内容 文字详细 -->
 <view class='MediumContent'>
 	<view id="footContent-headline">
-		<view style="font-size:36rpx">
-			<image src="../../../res//iconfont/注意.png" style="width:14px;height:14px"></image>
-			订房必读
+		<view >
+			<image src="../../../res/iconfont/tips.png" style="vertical-align: middle; width:36rpx;height:36rpx"></image>
+			<text style="font-size:28rpx">	订房必读</text>
 		</view>
-		<view style="color:red" bindtap="showModal">查看全部</view>
+		<view style="color:red;font-size: 20rpx;" bindtap="showModal">查看全部</view>
 		<!-- <text class="specification">{{indexData.read}}</text> -->
 	</view>
 	<text class="specification">{{indexData.read}}</text>

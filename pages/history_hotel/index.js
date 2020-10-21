@@ -12,42 +12,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    const that = this;
-    const arr = [];
-    const dataArr = [];
-    wx.request({
-      url: 'https://ht1.jomeswang.top/api/order?openid=' + app.globalData.openid,
-      method: 'GET',
-      header: {
-        "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
-      },
-      success: res => {
+  onLoad: function (options) {},
 
-        console.log(res.data, '看一下');
-        res.data.forEach(item => {
-          const ele = JSON.parse(item)
-          dataArr.push(ele)
-          const obj = {
-            price: ele.price,
-            status: ele.status,
-            startTime: ele.order_begin_time,
-            endTime: ele.order_end_time,
-            title: ele.order_room_type,
-            // num: ele.form.order_room_num,
-            night: this.calNight(ele.order_begin_time, ele.order_end_time)
-          }
-          arr.push(obj)
-        });
-        this.setData({
-          cardArr: arr,
-          data: dataArr,
-        })
-      }
-    })
-
-
-  },
 
   /**
    * 计算住的晚上数
@@ -83,7 +49,7 @@ Page({
     console.log(data);
 
     wx.navigateTo({
-      url: '../hotel/hotelDetail/index?indexData=' + data,
+      url: '../../pages/hotel/hotelDetail/index?indexData=' + data,
     })
 
   },
@@ -98,6 +64,47 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
+    const that = this;
+    const arr = [];
+    const dataArr = [];
+    wx.request({
+      url: 'https://ht1.jomeswang.top/api/order?openid=' + app.globalData.openid,
+      method: 'GET',
+      header: {
+        "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
+      },
+      success: res => {
+        wx.hideLoading()
+        console.log(res.data, '看一下');
+        res.data.forEach(item => {
+          const ele = JSON.parse(item)
+          dataArr.push(ele)
+          const obj = {
+            price: ele.price,
+            status: ele.status,
+            startTime: ele.order_begin_time,
+            endTime: ele.order_end_time,
+            title: ele.order_room_type,
+            // num: ele.form.order_room_num,
+            night: this.calNight(ele.order_begin_time, ele.order_end_time)
+          }
+          arr.push(obj)
+        });
+        this.setData({
+          cardArr: arr,
+          data: dataArr,
+        })
+      },
+      fail: res => {
+
+        wx.hideLoading()
+      }
+
+    })
+
 
   },
 

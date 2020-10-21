@@ -14,7 +14,7 @@
 			<view id="footContent-headline">
 				<view style="display:flex">
 					<view style="font-size:36rpx">
-						<image src="../../../res//iconfont/注意.png" style="width:14px;height:14px"></image>
+						<image src="../../../res//iconfont/tips.png" style="width:14px;height:14px"></image>
 
 					</view>
 

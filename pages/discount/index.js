@@ -98,17 +98,19 @@ Page({
 
     wx.request({
       // url: 'https://ht1.jomeswang.top/api/event/?openid=123&status=可使用',
-      url: 'https://ht1.jomeswang.top/api/event/?openid=' + app.globalData.openid + '&status=可使用',
+      url: 'https://ht1.jomeswang.top/api/event/?openid=' + app.globalData.openid,
       header: {
         "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indhbmd4aW4iLCJpYXQiOjE1OTg0OTk1OTF9.89hr8flvp3L5-rsO182hLPUqzQTBC2x6relk7DipbrU"
       },
       method: 'GET',
       success: res => {
+        console.log(res)
         res.data.forEach((item, index) => {
           const canUse = !this.isOverdue(item.endDate)
           // canUse ? '' : continue
           console.log(item, 'item');
           item = JSON.parse(item)
+          console.log(item,11111111111)
           if (canUse) { //若不过期
             let flag = true
             const startMonth = item.startDate.split('-')[1];
@@ -174,6 +176,7 @@ Page({
                 break;
 
             }
+            console.log(eatCardArr, roomCardArr, chessCardArr)
             this.setData({
               eatCardArr,
               roomCardArr,

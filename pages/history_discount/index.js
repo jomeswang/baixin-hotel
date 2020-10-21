@@ -27,9 +27,13 @@ Page({
     //     })
     //   }
     // })
+    wx.showLoading({
+      title: '加载中',
+    })
     db.collection('orderForm').where({
       openid: app.globalData.openid
     }).get().then(res => {
+      wx.hideLoading()
       console.log(res.data);
       res.data.forEach(item => {
         item.time = this.getTime(item.time)

@@ -4,8 +4,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-   roomArr:{
-      type:Array
+    roomArr: {
+      type: Array
     }
   },
 
@@ -20,7 +20,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    callPhone() {
+      wx.makePhoneCall({
+        phoneNumber: '‭075586298588‬',
+      })
+    }
 
   }
 })

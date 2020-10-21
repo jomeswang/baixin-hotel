@@ -1,31 +1,41 @@
 Page {
   width: 100%;
   height: 100%;
+
+  background: #FFFAFA;
 }
-.top-image{
-  height:30%;
+image{
+  vertical-align: middle;
+}
+
+.top-image {
+  height: 30%;
   width: 100%;
-  }
-.nothing{
- 
-  height: 200rpx;
 }
+
+.nothing {
+  background-color: #FFFAFA;
+  height: 68rpx;
+}
+
 .filterContent {
   width: 100%;
   box-sizing: border-box;
   position: absolute;
   top: 260rpx;
-  padding: 0 28rpx;
+  padding: 0 46rpx;
 
 }
-.filterContent .lovePng{
-  width: 115rpx;
-  height: 115rpx;
- left:50%;
- transform:translate(-50%);
+
+.filterContent .lovePng {
+  width: 84rpx;
+  height: 84rpx;
+  left: 50%;
+  transform: translate(-50%);
   position: absolute;
   margin-top: -52rpx;
 }
+
 .filterView {
   display: flex;
   flex-direction: column;
@@ -36,67 +46,86 @@ Page {
   border-radius: 20px;
   background: white;
 }
+
 .location {
-     width: 100%;
-     height: max-content;
-     box-sizing: border-box;
-     padding: 20rpx 28rpx;
-     display: flex;
-     flex-direction: row;
-     align-items: center;
-     
-     border-bottom: 1rpx solid white;
+  width: 100%;
+  height: max-content;
+  box-sizing: border-box;
+  padding: 20rpx 28rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.location .caption, .location .city, .location .filter .text {
-     font-size: 16px;
-     margin-left: 14rpx;
-     color: #000000;
-     font-weight: 600;
+.location .caption,
+.location .city,
+.location .filter .text {
+  font-size: 40rpx;
+  margin-left: 14rpx;
+color: #484343;
+  font-weight: 600;
 }
-.text2{
-  font-size:13px;
-font-weight:400;
-width: 7;
-height: 22px;
-color:rgba(235,74,66,1);
-opacity:1;
-text-align:center;
-width: 60px;
-background:rgba(253,125,76,0.15);
-box-shadow:0px 6px 20px rgba(0,0,0,0.11);
-border-radius: 40rpx;
+#cardText{
+  width: 80rpx;
+height: 28rpx;
+font-size: 20rpx;
+font-weight: 400;
+line-height: 28rpx;
+color: #EB4A42;
 }
-.text3{
-  font-size:13px;
-font-weight:400;
-height: 22px;
-color:rgba(235,74,66,1);
-opacity:1;
-text-align:center;
-width: 140px;
-background:rgba(253,125,76,0.15);
-box-shadow:0px 6px 20px rgba(0,0,0,0.11);
-border-radius: 40rpx;
+#MidTextLine{
+  margin-top: 28rpx;
 }
+
+.text2 {
+  font-size: 13px;
+  font-weight: 400;
+  width: 7;
+  height: 22px;
+  color: rgba(235, 74, 66, 1);
+  opacity: 1;
+  text-align: center;
+  width: 60px;
+  background: rgba(253, 125, 76, 0.15);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.11);
+  border-radius: 40rpx;
+}
+
+.text3 {
+  font-size: 13px;
+  font-weight: 400;
+  height: 22px;
+  color: rgba(235, 74, 66, 1);
+  opacity: 1;
+  text-align: center;
+  width: 140px;
+  background: rgba(253, 125, 76, 0.15);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.11);
+  border-radius: 40rpx;
+}
+
 .location .filter {
-     display: flex;
-     flex-direction: row;
-     flex: 1;
-     justify-content: center;
-     align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 }
+
 .MediumContent {
-  margin: 24rpx;
+  margin:44rpx 46rpx;
   display: flex;
   flex-direction: column;
   padding: 36rpx;
-  border-radius: 10rpx;
+  border-radius: 20rpx;
   box-shadow: 0rpx 6rpx 20rpx #ccc;
   background: white;
-  font-size: 30rpx;
+  font-size: 24rpx;
+  color: #484343;
+  font-weight: 600;
 }
-.specification{
+
+.specification {
   line-height: 32px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -105,30 +134,35 @@ border-radius: 40rpx;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4
 }
-.content-right{
+
+.content-right {
   display: flex;
   flex-direction: row-reverse;
 }
-#right-text{
-  border: tomato 5rpx solid ;
-  padding: 5px;
-  border-radius: 30rpx;
+
+#right-text {
+  border: tomato 1rpx solid;
+  padding: 10rpx;
+  border-radius: 20rpx;
   margin-right: 15rpx;
   margin-left: 25rpx;
-  width:48px;
-  height:17px;
-  font-size:12px;
+  width: 96rpx;
+  height: 34rpx;
+  font-size: 24rpx;
 
-  font-weight:600;
-  line-height:17px;
-  color:rgba(235,74,66,1);
-  opacity:1;
+  font-weight: 600;
+
+  
+color: #EB4A42;
+  opacity: 1;
 }
-#footContent-headline{
+
+#footContent-headline {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 /* 弹窗 */
 /* 查看全部 */
 .commodity_screen {
@@ -142,9 +176,9 @@ border-radius: 40rpx;
   overflow: hidden;
   z-index: 1000;
   color: #fff;
- }
- 
- .commodity_attr_box {
+}
+
+.commodity_attr_box {
 
   overflow: hidden;
   position: fixed;
@@ -154,11 +188,47 @@ border-radius: 40rpx;
   background: #fff;
   padding-top: 20rpx;
   height: 650rpx;
- }
+}
 
- /* //弹出框 */
- .commodity_attr_box{
-   box-sizing: border-box;
-   padding: 40rpx;
-   font-size: 40rpx;
- }
+/* //弹出框 */
+.commodity_attr_box {
+  box-sizing: border-box;
+  padding: 40rpx;
+  font-size: 40rpx;
+}
+
+/* 新的导航电话*/
+
+.detail {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  text-align: center;
+  line-height: 44rpx;
+}
+
+.tel,
+.nav {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 20rpx;
+  background-color: rgba(253, 125, 76, 0.15);
+  border-radius: 20rpx;
+  height: 44rpx;
+  /* width: 140rpx; */
+  padding: 12rpx 14rpx;
+
+}
+
+.line {
+  width: 46rpx;
+  height: 44rpx;
+}
+
+image {
+  vertical-align: top;
+  width: 24rpx;
+  height: 24rpx;
+}

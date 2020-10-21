@@ -1,96 +1,91 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"enhance": false,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": false,
-		"coverView": true,
-		"nodeModules": false,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"uglifyFileName": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"compileHotReLoad": false,
-		"useIsolateContext": true,
-		"useMultiFrameRuntime": false,
-		"useApiHook": true,
-		"packNpmManually": false,
-		"packNpmRelationList": []
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.12.1",
-	"appid": "wx104ea7e4f90396f7",
-	"projectname": "fish-hotel",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"scripts": {},
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"current": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": [
-				{
-					"id": 0,
-					"name": "预定房间",
-					"pathName": "pages/hotel/bookHotel/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "订单详情",
-					"pathName": "pages/hotel/hotelDetail/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "优惠券历史",
-					"pathName": "pages/hotel/bookHistory/index",
-					"query": "",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.12.1",
+  "appid": "wx104ea7e4f90396f7",
+  "projectname": "fish-hotel",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "预定房间",
+          "pathName": "pages/hotel/bookHotel/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "订单详情",
+          "pathName": "pages/hotel/hotelDetail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单详情",
+          "pathName": "pages/hotel/hotelDetail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "页面详情",
+          "pathName": "pages/hotel/hotelDetail/index",
+          "query": "indexData={\"_id\":\"b8df3bd65f88727a0162d8b05c0decd8\",\"counters\":17,\"currentTime\":\"2020/10/16 00:01:24\",\"deposit\":\"0\",\"form\":{\"order_name\":\"分\",\"order_phone_number\":\"ghh\",\"order_room_num\":1},\"id\":\"2\",\"last_time\":\"1\",\"openid\":\"oaFmY5GCGMCqfaAPRNOEqM3cHgZc\",\"order_begin_time\":\"2020-10-16\",\"order_end_time\":\"2020-10-17\",\"order_room_type\":\"超级大房\",\"outTradeNo\":\"530000309415860789779700392693\",\"pic_List\":[\"https://ht1.jomeswang.top/upload_51126ade0f39681ec56b9b84ccee161e.jpg\"],\"price\":0.1,\"reachTime\":\"12:01\",\"status\":\"待确认\"}",
+          "scene": null
+        }
+      ]
+    }
+  }
 }
